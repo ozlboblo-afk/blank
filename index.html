@@ -24,6 +24,10 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <!-- 本番の“正しいURL”に差し替える -->
     <link rel="canonical" href="https://example.com" />
 
@@ -45,33 +49,74 @@
 
   <body>
     <header class="header">
-      <div class="container headerInner">
-        <div class="headerLeft">
-          <h1 class="headerLogo"><a href="#">BLANK</a></h1>
-          <nav class="headerNav">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Works</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-        <a href="#" class="headerCta btn">お問い合わせ</a>
+      <div class="container">
+        <h1 class="headerLogo">
+          <a href="/">
+            <svg
+              viewBox="0 0 126 15"
+              class="logo"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line y1="6.77295" x2="30" y2="6.77295" />
+              <path
+                d="M115.57 14.5455V0H116.898V7.83381H117.026L124.129 0H125.876L119.661 6.72585L125.847 14.5455H124.228L118.837 7.64915L116.898 9.82244V14.5455H115.57Z"
+              />
+              <path
+                d="M108.57 0V14.5455H107.278L98.6839 2.36506H98.5703V14.5455H97.2422V0H98.5277L107.15 12.1946H107.263V0H108.57Z"
+              />
+              <path
+                d="M78.6012 14.5455H77.2091L82.5003 0H83.9208L89.2119 14.5455H87.8199L83.2602 1.72585H83.1608L78.6012 14.5455Z"
+              />
+              <path
+                d="M61.9492 14.5455V0H63.2773V13.3523H70.2092V14.5455H61.9492Z"
+              />
+              <path
+                d="M44 14.5455V0H48.9077C49.8546 0 50.643 0.16572 51.2727 0.497159C51.9072 0.828599 52.383 1.28078 52.7003 1.85369C53.0175 2.42661 53.1761 3.07765 53.1761 3.80682C53.1761 4.41288 53.0743 4.93134 52.8707 5.36222C52.6671 5.79309 52.3902 6.1411 52.0398 6.40625C51.6894 6.6714 51.2988 6.86316 50.8679 6.98153V7.09517C51.3366 7.12831 51.7912 7.29403 52.2315 7.59233C52.6719 7.88589 53.0341 8.29782 53.3182 8.82812C53.6023 9.35843 53.7443 9.9929 53.7443 10.7315C53.7443 11.4654 53.581 12.1212 53.2543 12.6989C52.9276 13.2718 52.4257 13.724 51.7486 14.0554C51.0762 14.3821 50.2192 14.5455 49.1776 14.5455H44ZM45.3281 13.3523H49.1776C50.2997 13.3523 51.1283 13.1037 51.6634 12.6065C52.2031 12.1094 52.473 11.4844 52.473 10.7315C52.473 10.1776 52.3381 9.67566 52.0682 9.22585C51.803 8.77131 51.4266 8.41146 50.9389 8.14631C50.456 7.88116 49.8878 7.74858 49.2344 7.74858H45.3281V13.3523ZM45.3281 6.5696H49.0284C49.6013 6.5696 50.1032 6.45123 50.5341 6.21449C50.965 5.97775 51.3011 5.65104 51.5426 5.23438C51.7841 4.81771 51.9048 4.34186 51.9048 3.80682C51.9048 3.03504 51.6539 2.40767 51.152 1.92472C50.6501 1.43703 49.902 1.19318 48.9077 1.19318H45.3281V6.5696Z"
+              />
+            </svg>
+          </a>
+        </h1>
+        <nav class="headerNav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <a href="#" class="headerCta btn">お問い合わせ</a>
+        </nav>
+
+        <button class="hamburger" aria-label="menu">
+          <span class="hamburgerLine"></span>
+        </button>
       </div>
     </header>
 
     <main class="main">
       <section class="hero">
         <div class="container">
-          <h2>余白から整えるWEBデザイン。</h2>
-          <p class="heroDescription">
-            情報を削ぎ落とし、本質を伝えるデザインを。シンプルで上質な体験を設計します。
-          </p>
-          <a href="#" class="heroCta btn">
-            View More
-            <span class="material-symbols-outlined">arrow_right_alt</span>
-          </a>
+          <div class="heroInfo">
+            <h2>
+              余白から整える
+              <br />
+              WEBデザイン。
+            </h2>
+            <p class="heroDescription">
+              情報を削ぎ落とし、本質を伝えるデザインを。
+              <br />
+              シンプルで上質な体験を設計します。
+            </p>
+            <a href="#" class="heroCta btn">
+              View More
+              <span class="material-symbols-outlined">arrow_right_alt</span>
+            </a>
+          </div>
+          <div class="heroVisual">
+            <img
+              src="/assets/img/hero-visual.webp"
+              alt="デバイスのイメージ画像"
+            />
+          </div>
         </div>
       </section>
 
@@ -79,100 +124,131 @@
         <div class="container">
           <div class="conceptHeader">
             <h2>CONCEPT</h2>
-            <p>余白で伝える設計</p>
-            <p class="sectionDescription">
-              必要な情報だけを整理し、余白とタイポグラフィで価値を伝えるデザインを目指しています。
+            <p class="conceptLead">余白で伝える設計</p>
+            <p class="conceptText">
+              必要な情報だけを整理し、
+              <br />
+              余白とタイポグラフィで 価値を伝えるデザインを目指しています。
             </p>
           </div>
           <div class="features">
-            <img src="/assets/img/concept-visual.jpg" alt="CONCEPT Visual" />
-            <div class="featureItem">
-              <span class="material-symbols-outlined">check_box</span>
-              <div class="featureContent">
-                <p class="featureTitle">情報設計</p>
-                <p class="featureText">
-                  ユーザーにとって本質的な情報だけを残します。
-                </p>
-              </div>
+            <div class="conceptVisual">
+              <img src="/assets/img/concept-visual.webp" alt="CONCEPT Visual" />
             </div>
-            <div class="featureItem">
-              <span class="material-symbols-outlined">check_box</span>
-              <div class="featureContent">
-                <p class="featureTitle">視線の流れ</p>
-                <p class="featureText">
-                  余白とレイアウトで、自然な視線誘導を設計します。
-                </p>
-              </div>
-            </div>
-            <div class="featureItem">
-              <span class="material-symbols-outlined">select_check_box</span>
-              <div class="featureContent">
-                <p class="featureTitle">一貫した世界観</p>
-                <p class="featureText">
-                  カラー・タイポ・余白のルールを統一します。
-                </p>
-              </div>
-            </div>
+            <ul>
+              <li>
+                <span class="material-symbols-outlined">check_box</span>
+                <div class="featureContent">
+                  <p class="featureTitle">情報設計</p>
+                  <p class="featureText">
+                    ユーザーにとって本質的な情報だけを残します。
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="material-symbols-outlined">check_box</span>
+                <div class="featureContent">
+                  <p class="featureTitle">視線の流れ</p>
+                  <p class="featureText">
+                    余白とレイアウトで、自然な視線誘導を設計します。
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="material-symbols-outlined">select_check_box</span>
+                <div class="featureContent">
+                  <p class="featureTitle">一貫した世界観</p>
+                  <p class="featureText">
+                    カラー・タイポ・余白のルールを統一します。
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section class="linea">
         <div class="container">
-          <div class="lineaHeader">
-            <h2>LINEA</h2>
-            <div class="lineaSub">
-              <p>ミニマルECサイトデザイン</p>
-              <p>（仮想プロジェクト）</p>
+          <div class="lineaIntro">
+            <div class="lineaHeader">
+              <h2>LINEA</h2>
+              <div class="lineaMeta">
+                <p class="lineaCategory">ミニマルECサイトデザイン</p>
+                <p class="lineaProjectType">（仮想プロジェクト）</p>
+              </div>
+            </div>
+
+            <div class="lineaBody">
+              <ul class="lineaInfoList">
+                <li>
+                  <h3>目的</h3>
+                  <p class="lineaInfoText">シンプルで上質な購買体験の提供</p>
+                </li>
+                <li>
+                  <h3>ターゲット</h3>
+                  <p class="lineaInfoText">
+                    20代～30代のミニマル志向のユーザー
+                  </p>
+                </li>
+                <li>
+                  <h3>課題</h3>
+                  <p class="lineaInfoText">情報過多による離脱率の高さ</p>
+                </li>
+              </ul>
+
+              <div class="lineaCompare">
+                <div class="lineaCompareCard">
+                  <div class="lineaCompareLabel">
+                    <p>Before</p>
+                    <small>（初期デザイン）</small>
+                  </div>
+                  <div class="lineaCompareImg">
+                    <img
+                      src="/assets/img/lineaPage-before.webp"
+                      alt="LINEA Before"
+                    />
+                  </div>
+                </div>
+                <div class="lineaCompareCard">
+                  <div class="lineaCompareLabel">
+                    <p>After</p>
+                    <small>（リデザイン）</small>
+                  </div>
+                  <div class="lineaCompareImg">
+                    <img
+                      src="/assets/img/lineaSection-after.webp"
+                      alt="LINEA After"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <ul class="lineaMeta">
-            <li>
-              <h3>目的</h3>
-              <p class="lineaFeatureText">シンプルで上質な購買体験の提供</p>
-            </li>
-            <li>
-              <h3>ターゲット</h3>
-              <p class="lineaFeatureText">20代～30代のミニマル志向のユーザー</p>
-            </li>
-            <li>
-              <h3>課題</h3>
-              <p class="lineaFeatureText">情報過多による離脱率の高さ</p>
-            </li>
-          </ul>
-
-          <div class="lineCompare">
-            <div class="lineCompareCard">
-              <div>
-                <p>Before</p>
-                <small>（初期デザイン）</small>
-              </div>
-              <img src="/assets/img/lineaPage-before.png" alt="LINEA Before" />
-            </div>
-            <div class="lineCompareCard">
-              <div>
-                <p>After</p>
-                <small>（リデザイン）</small>
-              </div>
-              <img src="/assets/img/lineaSection-after.png" alt="LINEA After" />
-            </div>
+          <div class="lineaVisual">
+            <img src="/assets/img/lineaSection-after.webp" alt="LINEA After" />
           </div>
 
-          <div class="lineaHighLight">
-            <img src="/assets/img/lineaSection-after.png" alt="LINEA After" />
-            <div class="lineaHighLightContent">
-              <p class="lineaHighLightLead">
-                余白と階層の再設計で”上質さ”を伝えるページへ
+          <div class="lineaContent">
+            <div class="lineaContentInner">
+              <p class="lineaContentLead">
+                余白と階層の再設計で
+                <br />
+                ”上質さ”を伝えるページへ
               </p>
-              <p class="lineaHighLightText">
-                情報の優先順位を整理し、余白・タイポ・配色を見直すことでシンプルで洗練された印象に改善しました。
+              <p class="lineaContentText">
+                情報の優先順位を整理し、
+                <br />
+                余白・タイポ・配色を見直すことで
+                <br />
+                シンプルで洗練された印象に改善しました。
               </p>
-              <a href="#" class="lineaHighLightCta btn">
-                View More
-                <span class="material-symbols-outlined">arrow_right_alt</span>
-              </a>
             </div>
+            <a href="#" class="lineaContentCta btn">
+              View More
+              <span class="material-symbols-outlined">arrow_right_alt</span>
+            </a>
           </div>
         </div>
       </section>
@@ -182,14 +258,19 @@
           <div class="systemDesignHeader">
             <h2>SYSTEM DESIGN</h2>
             <p class="systemDesignLead">
-              一貫性のあるデザインシステムで、 使いやすさと美しさを両立します。
+              一貫性のあるデザインシステムで、
+              <br />
+              使いやすさと美しさを両立します。
             </p>
             <p class="systemDesignText">
               カラー、タイポグラフィ、余白などのルールを定義し、情報を整理された形で伝える設計を行います。
             </p>
           </div>
+          <div class="systemDesignVisual">
+            <img src="/assets/img/systemDesign-visual.webp" alt="" />
+          </div>
           <div class="systemDesignCards">
-            <article class="systemDesignCard">
+            <article class="systemDesignCard card-wide systemCardTall">
               <div class="systemDesignCardHeader">
                 <div class="systemDesignCardTitle">
                   <span class="systemDesignCardNumber">01</span>
@@ -199,8 +280,71 @@
                   上質さと視認性を意識したニュートラルカラーをベースに設計。
                 </p>
               </div>
-              <div class="systemDesignCardBody"></div>
+              <div class="systemDesignCardBody">
+                <div class="colorGroup">
+                  <p class="colorLabel">Blue Scale</p>
+                  <ul class="colorPalette">
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                  </ul>
+                </div>
+                <div class="colorGroup">
+                  <p class="colorLabel">Green Scale</p>
+                  <ul class="colorPalette">
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                  </ul>
+                </div>
+                <div class="colorGroup">
+                  <p class="colorLabel">Gray Scale</p>
+                  <ul class="colorPalette">
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                  </ul>
+                </div>
+                <div class="colorGroup">
+                  <p class="colorLabel">Yellow Scale</p>
+                  <ul class="colorPalette">
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                  </ul>
+                </div>
+                <div class="colorGroup">
+                  <p class="colorLabel">White/Black Scale</p>
+                  <ul class="colorPalette">
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                    <li class="colorItem"></li>
+                  </ul>
+                </div>
+              </div>
             </article>
+
             <article class="systemDesignCard">
               <div class="systemDesignCardHeader">
                 <div class="systemDesignCardTitle">
@@ -211,8 +355,28 @@
                   統一された角丸で、やさしい印象に。
                 </p>
               </div>
-              <div class="systemDesignCardBody"></div>
+              <div class="systemDesignCardBody">
+                <ul class="radiusPalette">
+                  <li class="radiusItem">
+                    <div class="radiusShape"></div>
+                    <p class="radiusLabel">4px</p>
+                  </li>
+                  <li class="radiusItem">
+                    <div class="radiusShape"></div>
+                    <p class="radiusLabel">8px</p>
+                  </li>
+                  <li class="radiusItem">
+                    <div class="radiusShape"></div>
+                    <p class="radiusLabel">12px</p>
+                  </li>
+                  <li class="radiusItem">
+                    <div class="radiusShape"></div>
+                    <p class="radiusLabel">16px</p>
+                  </li>
+                </ul>
+              </div>
             </article>
+
             <article class="systemDesignCard">
               <div class="systemDesignCardHeader">
                 <div class="systemDesignCardTitle">
@@ -223,8 +387,21 @@
                   シンプルで直感的に伝わるアイコンセット。
                 </p>
               </div>
-              <div class="systemDesignCardBody"></div>
+              <div class="systemDesignCardBody">
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <span class="material-symbols-outlined">schedule</span>
+                <span class="material-symbols-outlined">mail</span>
+                <span class="material-symbols-outlined">east</span>
+                <span class="material-symbols-outlined">cleaning_services</span>
+                <span class="material-symbols-outlined">menu</span>
+                <span class="material-symbols-outlined">chevron_right</span>
+                <span class="material-symbols-outlined">select_check_box</span>
+                <span class="material-symbols-outlined">expand_circle_up</span>
+              </div>
             </article>
+
             <article class="systemDesignCard">
               <div class="systemDesignCardHeader">
                 <div class="systemDesignCardTitle">
@@ -235,9 +412,54 @@
                   8pxを基準にしたスケールで、一貫した余白リズムを構築。
                 </p>
               </div>
-              <div class="systemDesignCardBody"></div>
+              <div class="systemDesignCardBody">
+                <!-- 以下をSpacingに直す -->
+                <ul class="spacingPalette">
+                  <li class="spacingItem">
+                    <p class="spacingLabel">4px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">8px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">12px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">16px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">24px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">32px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">48px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">64px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">96px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                  <li class="spacingItem">
+                    <p class="spacingLabel">128px</p>
+                    <div class="spacingBlock"></div>
+                  </li>
+                </ul>
+              </div>
             </article>
-            <article class="systemDesignCard">
+
+            <article class="systemDesignCard card-wide">
               <div class="systemDesignCardHeader">
                 <div class="systemDesignCardTitle">
                   <span class="systemDesignCardNumber">05</span>
@@ -247,7 +469,38 @@
                   可読性を重視し、洗礼された印象のタイポグラフィ。
                 </p>
               </div>
-              <div class="systemDesignCardBody"></div>
+              <div class="systemDesignCardBody">
+                <ul>
+                  <li class="typographyItem">
+                    <p class="typographySample">Aa</p>
+                    <div class="typographyMeta">
+                      <p class="typographyLabel">XXL</p>
+                      <p class="typographySpec">48px / 1.2</p>
+                    </div>
+                  </li>
+                  <li class="typographyItem">
+                    <p class="typographySample">Aa</p>
+                    <div class="typographyMeta">
+                      <p class="typographyLabel">Lg</p>
+                      <p class="typographySpec">36px / 1.2</p>
+                    </div>
+                  </li>
+                  <li class="typographyItem">
+                    <p class="typographySample">Aa</p>
+                    <div class="typographyMeta">
+                      <p class="typographyLabel">Base</p>
+                      <p class="typographySpec">18px / 1.3</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="typographyPreview">
+                  <h4>見出しテキストが入ります</h4>
+                  <p>
+                    これはダミーテキストです。読みやすい行間と文字サイズで情報がスムーズに伝わるように
+                    設計しています。
+                  </p>
+                </div>
+              </div>
             </article>
           </div>
         </div>
@@ -263,32 +516,65 @@
           </div>
           <ul class="processCards">
             <li class="processCard">
-              <span>01</span>
-              <h3>リサーチ</h3>
+              <div class="processCardHeader">
+                <span>01</span>
+                <h3>リサーチ</h3>
+              </div>
               <p class="processCardText">
                 市場・競合・ユーザーを分析し、課題を明確にします。
               </p>
+              <div class="processCardVisual">
+                <img src="/assets/img/process-research.webp" alt="リサーチ" />
+              </div>
             </li>
+            <span class="material-symbols-outlined">chevron_right</span>
             <li class="processCard">
-              <span>02</span>
-              <h3>コンセプト設計</h3>
+              <div class="processCardHeader">
+                <span>02</span>
+                <h3>コンセプト設計</h3>
+              </div>
               <p class="processCardText">
                 ブランドの価値を定義しデザインの方向性を決定します。
               </p>
+              <div class="processCardVisual">
+                <img
+                  src="/assets/img/process-concept.webp"
+                  alt="コンセプト設計"
+                />
+              </div>
             </li>
+            <span class="material-symbols-outlined">chevron_right</span>
             <li class="processCard">
-              <span>03</span>
-              <h3>ワイヤーフレーム</h3>
+              <div class="processCardHeader">
+                <span>03</span>
+                <h3>ワイヤーフレーム</h3>
+              </div>
               <p class="processCardText">
                 情報設計を行い、ユーザー体験の骨格を作ります。
               </p>
+              <div class="processCardVisual">
+                <img
+                  src="/assets/img/process-wireframe.webp"
+                  alt="ワイヤーフレーム"
+                />
+              </div>
             </li>
+            <span class="material-symbols-outlined">chevron_right</span>
+
             <li class="processCard">
-              <span>04</span>
-              <h3>UIデザイン</h3>
+              <div class="processCardHeader">
+                <span>04</span>
+                <h3>UIデザイン</h3>
+              </div>
               <p class="processCardText">
                 デザインシステムに基づき、美しく使いやすいUIを実現します。
               </p>
+              <div class="processCardVisual">
+                <img
+                  src="/assets/img/lineaSection-after.webp"
+                  alt="UIデザイン"
+                />
+              </div>
             </li>
           </ul>
         </div>
@@ -301,34 +587,81 @@
             <p>ご相談・お見積もりはお気軽にお問い合せください。</p>
           </div>
 
-          <form action="#" method="post" class="contactForm">
-            <div class="formGroup">
-              <label for="name">お名前</label>
-              <input type="text" id="name" name="name" required />
+          <div class="contactBody">
+            <form action="#" method="post" class="contactForm">
+              <div class="contactRow">
+                <div class="formGroup">
+                  <label for="name">お名前</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="formGroup">
+                  <label for="email">メールアドレス</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+              </div>
+              <div class="formGroup">
+                <label for="message">メッセージ</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="contactFormCta btn">送信する</button>
+            </form>
+
+            <div class="contactInfo">
+              <div class="contactInfoItem">
+                <span class="material-symbols-outlined">mail</span>
+                <div>
+                  <p>Email</p>
+                  <a href="mailto:info@blank.com">info@blank.com</a>
+                </div>
+              </div>
+
+              <div class="contactInfoItem">
+                <span class="material-symbols-outlined">schedule</span>
+                <div>
+                  <p>対応時間</p>
+                  <p>9:00〜18:00</p>
+                </div>
+              </div>
             </div>
-            <div class="formGroup">
-              <label for="email">メールアドレス</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="formGroup">
-              <label for="message">メッセージ</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="contactFormCta btn">送信する</button>
-          </form>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <div class="container">
-        <div class="footerInner">
-          <a class="footerLogo" href="#">BLANK</a>
+        <div class="footerBrand">
+          <div class="footerLogo">
+            <a href="/">
+              <svg
+                viewBox="0 0 126 15"
+                class="logo"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line y1="6.77295" x2="30" y2="6.77295" />
+                <path
+                  d="M115.57 14.5455V0H116.898V7.83381H117.026L124.129 0H125.876L119.661 6.72585L125.847 14.5455H124.228L118.837 7.64915L116.898 9.82244V14.5455H115.57Z"
+                />
+                <path
+                  d="M108.57 0V14.5455H107.278L98.6839 2.36506H98.5703V14.5455H97.2422V0H98.5277L107.15 12.1946H107.263V0H108.57Z"
+                />
+                <path
+                  d="M78.6012 14.5455H77.2091L82.5003 0H83.9208L89.2119 14.5455H87.8199L83.2602 1.72585H83.1608L78.6012 14.5455Z"
+                />
+                <path
+                  d="M61.9492 14.5455V0H63.2773V13.3523H70.2092V14.5455H61.9492Z"
+                />
+                <path
+                  d="M44 14.5455V0H48.9077C49.8546 0 50.643 0.16572 51.2727 0.497159C51.9072 0.828599 52.383 1.28078 52.7003 1.85369C53.0175 2.42661 53.1761 3.07765 53.1761 3.80682C53.1761 4.41288 53.0743 4.93134 52.8707 5.36222C52.6671 5.79309 52.3902 6.1411 52.0398 6.40625C51.6894 6.6714 51.2988 6.86316 50.8679 6.98153V7.09517C51.3366 7.12831 51.7912 7.29403 52.2315 7.59233C52.6719 7.88589 53.0341 8.29782 53.3182 8.82812C53.6023 9.35843 53.7443 9.9929 53.7443 10.7315C53.7443 11.4654 53.581 12.1212 53.2543 12.6989C52.9276 13.2718 52.4257 13.724 51.7486 14.0554C51.0762 14.3821 50.2192 14.5455 49.1776 14.5455H44ZM45.3281 13.3523H49.1776C50.2997 13.3523 51.1283 13.1037 51.6634 12.6065C52.2031 12.1094 52.473 11.4844 52.473 10.7315C52.473 10.1776 52.3381 9.67566 52.0682 9.22585C51.803 8.77131 51.4266 8.41146 50.9389 8.14631C50.456 7.88116 49.8878 7.74858 49.2344 7.74858H45.3281V13.3523ZM45.3281 6.5696H49.0284C49.6013 6.5696 50.1032 6.45123 50.5341 6.21449C50.965 5.97775 51.3011 5.65104 51.5426 5.23438C51.7841 4.81771 51.9048 4.34186 51.9048 3.80682C51.9048 3.03504 51.6539 2.40767 51.152 1.92472C50.6501 1.43703 49.902 1.19318 48.9077 1.19318H45.3281V6.5696Z"
+                />
+              </svg>
+            </a>
+          </div>
           <small class="footerCopy">
             &copy; 2024 BLANK. All rights reserved.
           </small>
@@ -341,5 +674,6 @@
         </nav>
       </div>
     </footer>
+    <script src="/js/humburger.js"></script>
   </body>
 </html>
