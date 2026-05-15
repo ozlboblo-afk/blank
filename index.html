@@ -48,7 +48,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header id="home" class="header">
       <div class="container">
         <h1 class="headerLogo">
           <a href="/">
@@ -78,12 +78,13 @@
         </h1>
         <nav class="headerNav">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#linea">LINEA</a></li>
+            <li><a href="#systemDesign">System Design</a></li>
+            <li><a href="#process">Process</a></li>
           </ul>
-          <a href="#" class="headerCta btn">お問い合わせ</a>
+          <a href="#contact" class="btn btn-primary">お問い合わせ</a>
         </nav>
 
         <button class="hamburger" aria-label="menu">
@@ -95,18 +96,18 @@
     <main class="main">
       <section class="hero">
         <div class="container">
-          <div class="heroInfo">
+          <div class="heroBody">
             <h2>
               余白から整える
               <br />
               WEBデザイン。
             </h2>
-            <p class="heroDescription">
+            <p class="heroLead">
               情報を削ぎ落とし、本質を伝えるデザインを。
               <br />
               シンプルで上質な体験を設計します。
             </p>
-            <a href="#" class="heroCta btn">
+            <a href="#linea" class="btn btn-outline">
               View More
               <span class="material-symbols-outlined">arrow_right_alt</span>
             </a>
@@ -120,7 +121,7 @@
         </div>
       </section>
 
-      <section class="concept">
+      <section id="concept" class="concept">
         <div class="container">
           <div class="conceptHeader">
             <h2>CONCEPT</h2>
@@ -131,34 +132,35 @@
               余白とタイポグラフィで 価値を伝えるデザインを目指しています。
             </p>
           </div>
-          <div class="features">
+
+          <div class="conceptBody">
             <div class="conceptVisual">
               <img src="/assets/img/concept-visual.webp" alt="CONCEPT Visual" />
             </div>
             <ul>
               <li>
                 <span class="material-symbols-outlined">check_box</span>
-                <div class="featureContent">
-                  <p class="featureTitle">情報設計</p>
-                  <p class="featureText">
+                <div class="conceptPoint">
+                  <p class="conceptPointTitle">情報設計</p>
+                  <p class="conceptPointText">
                     ユーザーにとって本質的な情報だけを残します。
                   </p>
                 </div>
               </li>
               <li>
                 <span class="material-symbols-outlined">check_box</span>
-                <div class="featureContent">
-                  <p class="featureTitle">視線の流れ</p>
-                  <p class="featureText">
+                <div class="conceptPoint">
+                  <p class="conceptPointTitle">視線の流れ</p>
+                  <p class="conceptPointText">
                     余白とレイアウトで、自然な視線誘導を設計します。
                   </p>
                 </div>
               </li>
               <li>
                 <span class="material-symbols-outlined">select_check_box</span>
-                <div class="featureContent">
-                  <p class="featureTitle">一貫した世界観</p>
-                  <p class="featureText">
+                <div class="conceptPoint">
+                  <p class="conceptPointTitle">一貫した世界観</p>
+                  <p class="conceptPointText">
                     カラー・タイポ・余白のルールを統一します。
                   </p>
                 </div>
@@ -168,32 +170,34 @@
         </div>
       </section>
 
-      <section class="linea">
+      <section id="linea" class="linea">
         <div class="container">
           <div class="lineaIntro">
             <div class="lineaHeader">
               <h2>LINEA</h2>
               <div class="lineaMeta">
-                <p class="lineaCategory">ミニマルECサイトデザイン</p>
+                <p>ミニマルECサイトデザイン</p>
                 <p class="lineaProjectType">（仮想プロジェクト）</p>
               </div>
             </div>
 
             <div class="lineaBody">
-              <ul class="lineaInfoList">
+              <ul class="lineaOverview">
                 <li>
                   <h3>目的</h3>
-                  <p class="lineaInfoText">シンプルで上質な購買体験の提供</p>
+                  <p class="lineaOverviewText">
+                    シンプルで上質な購買体験の提供
+                  </p>
                 </li>
                 <li>
                   <h3>ターゲット</h3>
-                  <p class="lineaInfoText">
+                  <p class="lineaOverviewText">
                     20代～30代のミニマル志向のユーザー
                   </p>
                 </li>
                 <li>
                   <h3>課題</h3>
-                  <p class="lineaInfoText">情報過多による離脱率の高さ</p>
+                  <p class="lineaOverviewText">情報過多による離脱率の高さ</p>
                 </li>
               </ul>
 
@@ -203,7 +207,7 @@
                     <p>Before</p>
                     <small>（初期デザイン）</small>
                   </div>
-                  <div class="lineaCompareImg">
+                  <div class="lineaCompareVisual">
                     <img
                       src="/assets/img/lineaPage-before.webp"
                       alt="LINEA Before"
@@ -215,7 +219,7 @@
                     <p>After</p>
                     <small>（リデザイン）</small>
                   </div>
-                  <div class="lineaCompareImg">
+                  <div class="lineaCompareVisual">
                     <img
                       src="/assets/img/lineaSection-after.webp"
                       alt="LINEA After"
@@ -230,14 +234,14 @@
             <img src="/assets/img/lineaSection-after.webp" alt="LINEA After" />
           </div>
 
-          <div class="lineaContent">
-            <div class="lineaContentInner">
-              <p class="lineaContentLead">
+          <div class="lineaMessage">
+            <div class="lineaMessageInner">
+              <p class="lineaMessageLead">
                 余白と階層の再設計で
                 <br />
                 ”上質さ”を伝えるページへ
               </p>
-              <p class="lineaContentText">
+              <p class="lineaMessageText">
                 情報の優先順位を整理し、
                 <br />
                 余白・タイポ・配色を見直すことで
@@ -245,7 +249,7 @@
                 シンプルで洗練された印象に改善しました。
               </p>
             </div>
-            <a href="#" class="lineaContentCta btn">
+            <a href="#" class="btn btn-text">
               View More
               <span class="material-symbols-outlined">arrow_right_alt</span>
             </a>
@@ -253,141 +257,308 @@
         </div>
       </section>
 
-      <section class="systemDesign">
+      <section id="systemDesign" class="systemDesign">
         <div class="container">
-          <div class="systemDesignHeader">
+          <div class="systemVisual">
+            <img src="/assets/img/systemDesign-visual.webp" alt="" />
+          </div>
+
+          <div class="systemHeader">
             <h2>SYSTEM DESIGN</h2>
-            <p class="systemDesignLead">
+            <p class="systemLead">
               一貫性のあるデザインシステムで、
               <br />
               使いやすさと美しさを両立します。
             </p>
-            <p class="systemDesignText">
-              カラー、タイポグラフィ、余白などのルールを定義し、情報を整理された形で伝える設計を行います。
+            <p class="systemText">
+              カラー、タイポグラフィ、余白などのルールを定義し、
+              <br />
+              情報を整理された形で伝える設計を行います。
             </p>
           </div>
-          <div class="systemDesignVisual">
-            <img src="/assets/img/systemDesign-visual.webp" alt="" />
-          </div>
-          <div class="systemDesignCards">
-            <article class="systemDesignCard card-wide systemCardTall">
-              <div class="systemDesignCardHeader">
-                <div class="systemDesignCardTitle">
-                  <span class="systemDesignCardNumber">01</span>
+          <div class="systemGrids">
+            <article class="systemGrid colorCard">
+              <div class="systemCardHeader">
+                <div class="systemCardTitle">
+                  <span class="systemCardNumber">01</span>
                   <h3>Color</h3>
                 </div>
-                <p class="systemDesignCardText">
+                <p class="systemCardText">
                   上質さと視認性を意識したニュートラルカラーをベースに設計。
                 </p>
               </div>
-              <div class="systemDesignCardBody">
+              <div class="systemCardBody colorBody">
                 <div class="colorGroup">
                   <p class="colorLabel">Blue Scale</p>
                   <ul class="colorPalette">
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
+                    <li class="colorItem" style="background: var(--blue-100)">
+                      <p class="colorStep">100</p>
+                      <p class="colorCode">#F0F5F6</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--blue-200)">
+                      <p class="colorStep">200</p>
+                      <p class="colorCode">#D2E0E5</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--blue-300)">
+                      <p class="colorStep">300</p>
+                      <p class="colorCode">#A6C0CB</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--blue-400)">
+                      <p class="colorStep">400</p>
+                      <p class="colorCode">#8CB0BD</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark"
+                      style="background: var(--blue-500)"
+                    >
+                      <p class="colorStep">500</p>
+                      <p class="colorCode">#6A96A9</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark"
+                      style="background: var(--blue-600)"
+                    >
+                      <p class="colorStep">600</p>
+                      <p class="colorCode">#557887</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark hide-mobile"
+                      style="background: var(--blue-700)"
+                    >
+                      <p class="colorStep">700</p>
+                      <p class="colorCode">#405A65</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark hide-mobile"
+                      style="background: var(--blue-800)"
+                    >
+                      <p class="colorStep">800</p>
+                      <p class="colorCode">#151E22</p>
+                    </li>
                   </ul>
                 </div>
                 <div class="colorGroup">
                   <p class="colorLabel">Green Scale</p>
                   <ul class="colorPalette">
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
+                    <li class="colorItem" style="background: var(--green-100)">
+                      <p class="colorStep">100</p>
+                      <p class="colorCode">#F6FAF4</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--green-200)">
+                      <p class="colorStep">200</p>
+                      <p class="colorCode">#E5F1DE</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--green-300)">
+                      <p class="colorStep">300</p>
+                      <p class="colorCode">#CBE3BC</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--green-400)">
+                      <p class="colorStep">400</p>
+                      <p class="colorCode">#BADAA6</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--green-500)">
+                      <p class="colorStep">500</p>
+                      <p class="colorCode">#A9D190</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark"
+                      style="background: var(--green-600)"
+                    >
+                      <p class="colorStep">600</p>
+                      <p class="colorCode">#8CAF77</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark hide-mobile"
+                      style="background: var(--green-700)"
+                    >
+                      <p class="colorStep">700</p>
+                      <p class="colorCode">#62784F</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark hide-mobile"
+                      style="background: var(--green-800)"
+                    >
+                      <p class="colorStep">800</p>
+                      <p class="colorCode">#28391E</p>
+                    </li>
                   </ul>
                 </div>
                 <div class="colorGroup">
                   <p class="colorLabel">Gray Scale</p>
                   <ul class="colorPalette">
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
+                    <li class="colorItem" style="background: var(--gray-100)">
+                      <p class="colorStep">100</p>
+                      <p class="colorCode">#F4F6F6</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--gray-200)">
+                      <p class="colorStep">200</p>
+                      <p class="colorCode">#E9EDEC</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--gray-300)">
+                      <p class="colorStep">300</p>
+                      <p class="colorCode">#DFE3E3</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--gray-400)">
+                      <p class="colorStep">400</p>
+                      <p class="colorCode">#D4DAD9</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--gray-500)">
+                      <p class="colorStep">500</p>
+                      <p class="colorCode">#A9B5B4</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark"
+                      style="background: var(--gray-600)"
+                    >
+                      <p class="colorStep">600</p>
+                      <p class="colorCode">#93A3A1</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark hide-mobile"
+                      style="background: var(--gray-700)"
+                    >
+                      <p class="colorStep">700</p>
+                      <p class="colorCode">#5B6564</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark hide-mobile"
+                      style="background: var(--gray-800)"
+                    >
+                      <p class="colorStep">800</p>
+                      <p class="colorCode">#3F4645</p>
+                    </li>
                   </ul>
                 </div>
                 <div class="colorGroup">
                   <p class="colorLabel">Yellow Scale</p>
                   <ul class="colorPalette">
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
+                    <li class="colorItem" style="background: var(--yellow-100)">
+                      <p class="colorStep">100</p>
+                      <p class="colorCode">#FCF8EF</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--yellow-200)">
+                      <p class="colorStep">200</p>
+                      <p class="colorCode">#F6EAD0</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--yellow-300)">
+                      <p class="colorStep">300</p>
+                      <p class="colorCode">#EDD4A0</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--yellow-400)">
+                      <p class="colorStep">400</p>
+                      <p class="colorCode">#E7C681</p>
+                    </li>
+                    <li class="colorItem" style="background: var(--yellow-500)">
+                      <p class="colorStep">500</p>
+                      <p class="colorCode">#E1B861</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark"
+                      style="background: var(--yellow-600)"
+                    >
+                      <p class="colorStep">600</p>
+                      <p class="colorCode">#B8964E</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark hide-mobile"
+                      style="background: var(--yellow-700)"
+                    >
+                      <p class="colorStep">700</p>
+                      <p class="colorCode">#7C6432</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark hide-mobile"
+                      style="background: var(--yellow-800)"
+                    >
+                      <p class="colorStep">800</p>
+                      <p class="colorCode">#2A210D</p>
+                    </li>
                   </ul>
                 </div>
                 <div class="colorGroup">
                   <p class="colorLabel">White/Black Scale</p>
                   <ul class="colorPalette">
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
-                    <li class="colorItem"></li>
+                    <li
+                      class="colorItem"
+                      style="
+                        background: var(--white);
+                        border: 1px solid var(--color-border-default);
+                      "
+                    >
+                      <p class="colorStep">100</p>
+                      <p class="colorCode">#FFFFFF</p>
+                    </li>
+                    <li
+                      class="colorItem colorItem-dark"
+                      style="background: var(--black)"
+                    >
+                      <p class="colorStep">100</p>
+                      <p class="colorCode">#3F4645</p>
+                    </li>
+                    <li class="colorItem colorItem-dark black100Opacity40">
+                      <p class="colorStep">100x40%</p>
+                      <p class="colorCode">#3F4645</p>
+                    </li>
+                    <li class="colorItem colorItem-dark black100Opacity60">
+                      <p class="colorStep">100x60%</p>
+                      <p class="colorCode">#3F4645</p>
+                    </li>
                   </ul>
                 </div>
               </div>
             </article>
 
-            <article class="systemDesignCard">
-              <div class="systemDesignCardHeader">
-                <div class="systemDesignCardTitle">
-                  <span class="systemDesignCardNumber">02</span>
+            <article class="systemGrid radiusCard">
+              <div class="systemCardHeader">
+                <div class="systemCardTitle">
+                  <span class="systemCardNumber">02</span>
                   <h3>Radius</h3>
                 </div>
-                <p class="systemDesignCardText">
-                  統一された角丸で、やさしい印象に。
-                </p>
+                <p class="systemCardText">統一された角丸で、やさしい印象に。</p>
               </div>
-              <div class="systemDesignCardBody">
-                <ul class="radiusPalette">
-                  <li class="radiusItem">
-                    <div class="radiusShape"></div>
-                    <p class="radiusLabel">4px</p>
-                  </li>
-                  <li class="radiusItem">
-                    <div class="radiusShape"></div>
-                    <p class="radiusLabel">8px</p>
-                  </li>
-                  <li class="radiusItem">
-                    <div class="radiusShape"></div>
-                    <p class="radiusLabel">12px</p>
-                  </li>
-                  <li class="radiusItem">
-                    <div class="radiusShape"></div>
-                    <p class="radiusLabel">16px</p>
-                  </li>
-                </ul>
-              </div>
+              <ul class="systemCardBody radiusBody">
+                <li class="radiusItem">
+                  <div
+                    class="radiusShape"
+                    style="border-top-right-radius: 4px"
+                  ></div>
+                  <p class="radiusLabel">4px</p>
+                </li>
+                <li class="radiusItem">
+                  <div
+                    class="radiusShape"
+                    style="border-top-right-radius: 8px"
+                  ></div>
+                  <p class="radiusLabel">8px</p>
+                </li>
+                <li class="radiusItem">
+                  <div
+                    class="radiusShape"
+                    style="border-top-right-radius: 12px"
+                  ></div>
+                  <p class="radiusLabel">12px</p>
+                </li>
+                <li class="radiusItem">
+                  <div
+                    class="radiusShape"
+                    style="border-top-right-radius: 16px"
+                  ></div>
+                  <p class="radiusLabel">16px</p>
+                </li>
+              </ul>
             </article>
 
-            <article class="systemDesignCard">
-              <div class="systemDesignCardHeader">
-                <div class="systemDesignCardTitle">
-                  <span class="systemDesignCardNumber">03</span>
+            <article class="systemGrid iconCard">
+              <div class="systemCardHeader">
+                <div class="systemCardTitle">
+                  <span class="systemCardNumber">03</span>
                   <h3>Iconography</h3>
                 </div>
-                <p class="systemDesignCardText">
+                <p class="systemCardText">
                   シンプルで直感的に伝わるアイコンセット。
                 </p>
               </div>
-              <div class="systemDesignCardBody">
+              <div class="systemCardBody iconographyBody">
                 <i class="fa-brands fa-youtube"></i>
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-x-twitter"></i>
@@ -396,101 +567,123 @@
                 <span class="material-symbols-outlined">east</span>
                 <span class="material-symbols-outlined">cleaning_services</span>
                 <span class="material-symbols-outlined">menu</span>
-                <span class="material-symbols-outlined">chevron_right</span>
                 <span class="material-symbols-outlined">select_check_box</span>
                 <span class="material-symbols-outlined">expand_circle_up</span>
               </div>
             </article>
 
-            <article class="systemDesignCard">
-              <div class="systemDesignCardHeader">
-                <div class="systemDesignCardTitle">
-                  <span class="systemDesignCardNumber">04</span>
+            <article class="systemGrid spacingCard">
+              <div class="systemCardHeader">
+                <div class="systemCardTitle">
+                  <span class="systemCardNumber">04</span>
                   <h3>Spacing</h3>
                 </div>
-                <p class="systemDesignCardText">
-                  8pxを基準にしたスケールで、一貫した余白リズムを構築。
+                <p class="systemCardText">
+                  8pxを基準にしたスケールで、
+                  <br />
+                  一貫した余白リズムを構築。
                 </p>
               </div>
-              <div class="systemDesignCardBody">
-                <!-- 以下をSpacingに直す -->
-                <ul class="spacingPalette">
-                  <li class="spacingItem">
-                    <p class="spacingLabel">4px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">8px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">12px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">16px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">24px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">32px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">48px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">64px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">96px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                  <li class="spacingItem">
-                    <p class="spacingLabel">128px</p>
-                    <div class="spacingBlock"></div>
-                  </li>
-                </ul>
-              </div>
+              <ul class="systemCardBody spacingPalette">
+                <li class="spacingItem">
+                  <p class="spacingLabel">4px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-2xs)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">8px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-xs)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">12px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-sm)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">16px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-md)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">24px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-lg)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">32px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-xl)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">48px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-2xl)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">64px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-3xl)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">96px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-4xl)"
+                  ></div>
+                </li>
+                <li class="spacingItem">
+                  <p class="spacingLabel">128px</p>
+                  <div
+                    class="spacingBlock"
+                    style="width: var(--space-5xl)"
+                  ></div>
+                </li>
+              </ul>
             </article>
 
-            <article class="systemDesignCard card-wide">
-              <div class="systemDesignCardHeader">
-                <div class="systemDesignCardTitle">
-                  <span class="systemDesignCardNumber">05</span>
+            <article class="systemGrid typographyCard">
+              <div class="systemCardHeader">
+                <div class="systemCardTitle">
+                  <span class="systemCardNumber">05</span>
                   <h3>Typography</h3>
                 </div>
-                <p class="systemDesignCardText">
-                  可読性を重視し、洗礼された印象のタイポグラフィ。
+                <p class="systemCardText">
+                  可読性を重視し、洗練された印象のタイポグラフィ。
                 </p>
               </div>
-              <div class="systemDesignCardBody">
+              <div class="systemCardBody typographyBody">
                 <ul>
                   <li class="typographyItem">
                     <p class="typographySample">Aa</p>
-                    <div class="typographyMeta">
-                      <p class="typographyLabel">XXL</p>
-                      <p class="typographySpec">48px / 1.2</p>
-                    </div>
+                    <p class="typographyLabel">XXL</p>
+                    <p class="typographySpec">48px / 1.2</p>
                   </li>
                   <li class="typographyItem">
                     <p class="typographySample">Aa</p>
-                    <div class="typographyMeta">
-                      <p class="typographyLabel">Lg</p>
-                      <p class="typographySpec">36px / 1.2</p>
-                    </div>
+                    <p class="typographyLabel">Lg</p>
+                    <p class="typographySpec">36px / 1.2</p>
                   </li>
                   <li class="typographyItem">
                     <p class="typographySample">Aa</p>
-                    <div class="typographyMeta">
-                      <p class="typographyLabel">Base</p>
-                      <p class="typographySpec">18px / 1.3</p>
-                    </div>
+                    <p class="typographyLabel">Base</p>
+                    <p class="typographySpec">18px / 1.3</p>
                   </li>
                 </ul>
                 <div class="typographyPreview">
@@ -506,7 +699,7 @@
         </div>
       </section>
 
-      <section class="process">
+      <section id="process" class="process">
         <div class="container">
           <div class="processHeader">
             <h2>PROCESS</h2>
@@ -516,26 +709,30 @@
           </div>
           <ul class="processCards">
             <li class="processCard">
-              <div class="processCardHeader">
-                <span>01</span>
-                <h3>リサーチ</h3>
+              <div class="processCardBody">
+                <div class="processCardHeader">
+                  <span>01</span>
+                  <h3>リサーチ</h3>
+                </div>
+                <p class="processCardText">
+                  市場・競合・ユーザーを分析し、課題を明確にします。
+                </p>
               </div>
-              <p class="processCardText">
-                市場・競合・ユーザーを分析し、課題を明確にします。
-              </p>
               <div class="processCardVisual">
                 <img src="/assets/img/process-research.webp" alt="リサーチ" />
               </div>
             </li>
-            <span class="material-symbols-outlined">chevron_right</span>
+
             <li class="processCard">
-              <div class="processCardHeader">
-                <span>02</span>
-                <h3>コンセプト設計</h3>
+              <div class="processCardBody">
+                <div class="processCardHeader">
+                  <span>02</span>
+                  <h3>コンセプト設計</h3>
+                </div>
+                <p class="processCardText">
+                  ブランドの価値を定義しデザインの方向性を決定します。
+                </p>
               </div>
-              <p class="processCardText">
-                ブランドの価値を定義しデザインの方向性を決定します。
-              </p>
               <div class="processCardVisual">
                 <img
                   src="/assets/img/process-concept.webp"
@@ -543,15 +740,17 @@
                 />
               </div>
             </li>
-            <span class="material-symbols-outlined">chevron_right</span>
+
             <li class="processCard">
-              <div class="processCardHeader">
-                <span>03</span>
-                <h3>ワイヤーフレーム</h3>
+              <div class="processCardBody">
+                <div class="processCardHeader">
+                  <span>03</span>
+                  <h3>ワイヤーフレーム</h3>
+                </div>
+                <p class="processCardText">
+                  情報設計を行い、ユーザー体験の骨格を作ります。
+                </p>
               </div>
-              <p class="processCardText">
-                情報設計を行い、ユーザー体験の骨格を作ります。
-              </p>
               <div class="processCardVisual">
                 <img
                   src="/assets/img/process-wireframe.webp"
@@ -559,16 +758,17 @@
                 />
               </div>
             </li>
-            <span class="material-symbols-outlined">chevron_right</span>
 
             <li class="processCard">
-              <div class="processCardHeader">
-                <span>04</span>
-                <h3>UIデザイン</h3>
+              <div class="processCardBody">
+                <div class="processCardHeader">
+                  <span>04</span>
+                  <h3>UIデザイン</h3>
+                </div>
+                <p class="processCardText">
+                  デザインシステムに基づき、美しく使いやすいUIを実現します。
+                </p>
               </div>
-              <p class="processCardText">
-                デザインシステムに基づき、美しく使いやすいUIを実現します。
-              </p>
               <div class="processCardVisual">
                 <img
                   src="/assets/img/lineaSection-after.webp"
@@ -580,11 +780,13 @@
         </div>
       </section>
 
-      <section class="contact">
+      <section id="contact" class="contact">
         <div class="container">
           <div class="contactHeader">
             <h2>CONTACT</h2>
-            <p>ご相談・お見積もりはお気軽にお問い合せください。</p>
+            <p class="contactText">
+              ご相談・お見積もりはお気軽にお問い合せください。
+            </p>
           </div>
 
           <div class="contactBody">
@@ -608,7 +810,7 @@
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="contactFormCta btn">送信する</button>
+              <button type="submit" class="btn btn-soft">送信する</button>
             </form>
 
             <div class="contactInfo">
@@ -669,7 +871,9 @@
         <nav class="footerNav">
           <ul class="footerLinks">
             <li><a href="/privacy-policy">プライバシーポリシー</a></li>
-            <li><a href="#">特定商取引法に基づく表記</a></li>
+            <li class="is-hidden">
+              <a href="/legal">特定商取引法に基づく表記</a>
+            </li>
           </ul>
         </nav>
       </div>
