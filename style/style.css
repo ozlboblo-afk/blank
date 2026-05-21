@@ -290,6 +290,7 @@ Layout
   gap: var(--space-lg);
   font-size: var(--text-tiny);
   line-height: var(--text-tiny-lh);
+  letter-spacing: 0.08em;
 }
 .hamburger {
   display: none;
@@ -656,6 +657,7 @@ Layout
 }
 .typographyCard .systemCardHeader {
   flex-direction: row;
+  align-items: center;
   gap: var(--space-sm);
 }
 .systemCardTitle {
@@ -671,9 +673,14 @@ Layout
   line-height: var(--text-base-lh);
   letter-spacing: 0.12em;
 }
+.systemCardText {
+  font-size: var(--text-tiny);
+  line-height: var(--text-tiny-lh);
+}
 @media (max-width: 768px) {
   .typographyCard .systemCardHeader {
     flex-direction: column;
+    align-items: start;
   }
 }
 
@@ -1104,12 +1111,15 @@ Layout
   margin-inline: auto;
 }
 .worksPoint {
-  display: flex;
-  gap: var(--space-md);
+  position: relative;
   padding: var(--space-2xl) var(--space-lg) var(--space-xs);
+  padding-left: var(--space-4xl);
   border-bottom: 1px solid var(--color-border-default);
 }
 .worksPoint span {
+  position: absolute;
+  top: var(--space-2xl);
+  left: var(--space-xl);
   padding-top: var(--space-2xs);
   font-size: var(--text-tiny);
   line-height: var(--text-tiny-lh);
@@ -1200,6 +1210,9 @@ Layout
 }
 
 /* privacyHTML */
+.privacyPolicy .container {
+  max-width: 720px;
+}
 .privacyHeader {
   margin: var(--space-4xl) 0;
 }
@@ -1227,8 +1240,8 @@ Layout
 }
 .privacySection p {
   max-width: 720px;
-  font-size: var(--text-small);
-  line-height: var(--text-small-lh);
+  font-size: var(--text-smBase);
+  line-height: var(--text-smBase-lh);
   color: var(--color-text-secondary);
 }
 
