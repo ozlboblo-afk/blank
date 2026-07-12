@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://blank-4v37ugar1-blank-design.vercel.app/sitemap.xml

@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ==== SEO ==== -->
-    <title>お問い合わせありがとうございます | BLANK</title>
+    <title>CONTACT | BLANK</title>
     <meta
       name="description"
-      content="お問い合わせありがとうございました。内容を確認後、2〜3営業日以内にご返信いたします。"
+      content="Web制作のご相談・ご依頼など、お気軽にお問い合わせください。BLANKへのお問い合わせページです。"
     />
 
     <meta name="author" content="BLANK" />
-    <meta name="robots" content="noindex, follow" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Google Search Console -->
     <meta
@@ -24,17 +24,14 @@
     <!-- ==== Canonical ==== -->
     <link
       rel="canonical"
-      href="https://blank-4v37ugar1-blank-design.vercel.app/thanks.html"
+      href="https://blank-4v37ugar1-blank-design.vercel.app/contact.html"
     />
 
     <!-- ==== OGP ==== -->
-    <meta
-      property="og:title"
-      content="お問い合わせありがとうございます | BLANK"
-    />
+    <meta property="og:title" content="CONTACT | BLANK" />
     <meta
       property="og:description"
-      content="お問い合わせありがとうございました。内容を確認後、2〜3営業日以内にご返信いたします。"
+      content="Web制作のご相談・ご依頼など、お気軽にお問い合わせください。BLANKへのお問い合わせページです。"
     />
     <!-- ogpの画像はつくりかえる -->
     <meta
@@ -43,7 +40,7 @@
     />
     <meta
       property="og:url"
-      content="https://blank-4v37ugar1-blank-design.vercel.app/thanks.html"
+      content="https://blank-4v37ugar1-blank-design.vercel.app/contact.html"
     />
 
     <meta property="og:type" content="website" />
@@ -115,21 +112,51 @@
       </footer>
     </aside>
 
-    <main class="thanks">
-      <p class="thanksEyebrow">Contact</p>
+    <main class="contactPage">
+      <div class="containerSm">
+        <div class="contactHeader">
+          <p class="sectionEyebrow">Contact</p>
+          <h1>お問い合わせ</h1>
 
-      <h1>
-        お問い合わせ
-        <br />
-        ありがとうございました。
-      </h1>
+          <p class="contactLead">
+            Web制作のご相談・ご依頼など、 お気軽にお問い合わせください。
+          </p>
+        </div>
 
-      <p class="thanksText">内容確認後、2〜3営業日以内にご返信いたします。</p>
+        <form class="contactForm">
+          <div class="formItem">
+            <label for="name">
+              お名前
+              <span>必須</span>
+            </label>
+            <input id="name" type="text" />
+          </div>
 
-      <a href="/" class="backLink">
-        <span></span>
-        Back
-      </a>
+          <div class="formItem">
+            <label for="mail">
+              メールアドレス
+              <span>必須</span>
+            </label>
+            <input id="mail" type="email" />
+          </div>
+
+          <div class="formItem">
+            <label for="subject">件名</label>
+            <input id="subject" type="text" />
+          </div>
+
+          <div class="formItem">
+            <label for="message">
+              お問い合わせ内容
+              <span>必須</span>
+            </label>
+
+            <textarea id="message" rows="8"></textarea>
+          </div>
+
+          <button class="submitBtn">SEND</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>
