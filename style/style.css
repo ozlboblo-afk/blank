@@ -209,12 +209,8 @@ select {
 Layout
 ========================= */
 /*==== 共通レイアウト ====*/
-body {
-  display: grid;
-
-  grid-template-columns:
-    var(--sidebar-width)
-    1fr;
+.main {
+  margin-left: var(--sidebar-width);
 }
 
 /* sectionのmarginBottom */
@@ -232,8 +228,11 @@ body {
 /*==== sidebar ====*/
 .sidebar {
   display: flex;
-  position: sticky;
+  position: fixed;
+
   top: 0;
+  left: 0;
+
   flex-direction: column;
   height: 100vh;
   padding: var(--space-xl);
@@ -259,6 +258,10 @@ body {
   margin-top: var(--space-2xl);
   font-size: var(--fs-smBase);
   line-height: 2;
+  opacity: 0.8;
+}
+.headerLead span {
+  font-size: var(--fs-tiny);
 }
 
 /* Nav */
@@ -267,6 +270,21 @@ body {
   flex-direction: column;
   gap: var(--space-sm);
   font-size: var(--fs-tiny);
+}
+.globalNav　a {
+  padding-left: 0;
+}
+.globalNav　a:hover {
+  padding-left: 12px;
+}
+.globalNav　a::before {
+  width: 0;
+  height: 1px;
+  transition: 0.3s;
+  content: "";
+}
+.globalNav　a:hover::before {
+  width: 20px;
 }
 
 /* Footer */
@@ -289,7 +307,7 @@ body {
 .worksGrid {
   display: grid;
   gap: var(--space-xl);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, var(--card-width));
 }
 .worksSection h2 {
   font-size: var(--fs-xl);
@@ -298,22 +316,36 @@ body {
 /* Card */
 .workCard {
   background: transparent;
-  transition: var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
   box-shadow: var(--shadow-card);
 }
 .workCard:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.workCard a {
+  display: block;
+  height: 100%;
+  color: inherit;
+}
+.workCard a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 6px;
 }
 
 /* cardImg */
 .workCard figure {
   overflow: hidden;
-  aspect-ratio: 3/4;
+
+  aspect-ratio: 4 / 5;
 }
 .workCard img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 /* cardBody */
@@ -332,33 +364,42 @@ body {
 .cardLink {
   display: flex;
   align-items: center;
-}
-.cardLink span {
-  white-space: nowrap;
-}
-.cardLink::after {
-  position: relative;
-  flex: 1;
-  margin-left: 12px;
-  content: "";
-  border-top: 1px solid currentColor;
-}
-.cardLink::before {
-  position: relative;
-  top: 0.4px;
-  left: -6px;
 
-  transform: rotate(45deg);
-  width: 7px;
-  height: 7px;
+  gap: var(--space-md);
+  margin-top: auto;
+  /* font-size: var(--fs-sm);
+  letter-spacing: 0.08em; */
+}
+.arrow {
+  position: relative;
 
-  margin-left: auto;
-  content: "";
+  width: 60px;
+  height: 1px;
+
+  background: currentColor;
+
+  transition: width var(--transition);
+  transform-origin: left;
+}
+
+.arrow::after {
+  position: absolute;
+
+  top: 50%;
+  right: -1px;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  width: 8px;
+  height: 8px;
 
   border-top: 1px solid currentColor;
   border-right: 1px solid currentColor;
 
-  order: 3;
+  content: "";
+}
+.workCard:hover .arrow {
+  width: 90px;
 }
 
 /* numberColor */
@@ -401,12 +442,22 @@ body {
 /*==== Info ====*/
 .infoSection {
   display: grid;
-  position: sticky;
+  position: fixed;
+  right: 0;
   bottom: 0;
-  grid-template-columns: repeat(3, 1fr);
+  left: var(--sidebar-width);
+  height: clamp(120px, 15vh, 140px);
+
+  grid-template-columns:
+    1fr
+    0.8fr
+    1.4fr;
 }
 .infoBox {
-  padding: var(--space-lg) var(--space-4xl);
+  padding: var(--space-md) var(--space-2xl);
+}
+.infoBox h2 {
+  font-size: var(--fs-base);
 }
 .infoBody {
   margin-top: var(--space-md);
@@ -414,12 +465,8 @@ body {
 }
 
 /* 線 */
-.infoSection {
-  position: relative;
-}
 .infoSection::before {
   position: absolute;
-
   top: 0;
   right: 140px;
   left: 140px;
@@ -438,9 +485,7 @@ body {
   position: absolute;
   top: 50%;
   right: 0;
-
   transform: translateY(-50%);
-
   width: 1px;
   height: 60%;
 
@@ -451,18 +496,57 @@ body {
 /* skillBox */
 .skillBox ul {
   display: grid;
+  gap: var(--space-xs);
   grid-template-columns: repeat(2, 1fr);
 }
-.infoBody li {
+.skillBox li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-sm);
 }
-.infoBody img {
+.skillBox img {
   width: 20px;
-  height: 20px;
-
   object-fit: contain;
+}
+
+/* contactBox */
+.contactGrid {
+  display: grid;
+  padding-bottom: var(--space-xs);
+  grid-template-columns: 1fr 1.4fr 1fr;
+
+  border-bottom: 1px solid var(--color-border-default);
+}
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: inherit;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.contactItem:not(:last-child) {
+  border-right: 1px solid var(--color-border-default);
+}
+.contactBox img {
+  width: 20px;
+  object-fit: contain;
+}
+.contactItem:hover {
+  transform: translateY(-3px);
+}
+
+.contactItem img {
+  transition: var(--transition);
+}
+.contactItem:hover img {
+  transform: scale(1.08);
+}
+.contactNote {
+  padding-inline: var(--space-lg);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-secondary);
 }
 
 /*==== subページ共通レイアウト ====*/
@@ -502,7 +586,7 @@ body {
   content: "";
 }
 
-/*==== プライバシーポリシー.html ====*/
+/*==== プライバシーポリシー/legal.html ====*/
 /* ヘッダー */
 .privacyHeader {
   margin-bottom: var(--space-5xl);
@@ -645,17 +729,53 @@ textarea:focus {
   border-color: var(--color-text-muted);
 }
 /* btn */
-.submitBtn {
-  width: 220px;
-  margin-top: 32px;
-  padding: 18px;
+.contactSubmit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: fit-content;
+
   border: none;
-  background: var(--black);
-  color: white;
+  background: none;
+  font: inherit;
+
+  color: inherit;
   cursor: pointer;
 }
+.contactLabel {
+  font-size: var(--fs-base);
+  letter-spacing: 0.08em;
+}
+/* 下段 */
+.contactArrow {
+  position: relative;
+  width: 180px;
+  height: 1px;
 
-/* ==== legal ==== */
+  background: var(--color-text-primary);
+
+  transition: width 0.35s ease;
+}
+/* 矢印 */
+.contactArrow::after {
+  position: absolute;
+  top: 50%;
+  right: -1px;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  width: 10px;
+  height: 10px;
+
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+
+  content: "";
+}
+/* Hover */
+.contactSubmit:hover .contactArrow {
+  width: 240px;
+}
 
 /* =========================
 Components
