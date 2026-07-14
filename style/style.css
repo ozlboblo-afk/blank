@@ -112,6 +112,11 @@ Variables
   /* ===== Overlay ===== */
   --color-overlay: rgba(15, 15, 13, 0.4);
 
+  /* Font Family */
+  --ff-en: "Inter", sans-serif;
+  --ff-ja: "Noto Sans JP", sans-serif;
+  --ff-serif: "Noto Serif JP", serif;
+
   /* ===== Font Size ===== */
   --fs-xxl: clamp(4rem, 4vw, 4.8rem);
   --fs-xl: clamp(3.4rem, 3vw, 4rem);
@@ -147,7 +152,6 @@ Variables
   --sidebar-width: 220px;
   --content-max-sm: 900px;
   --content-max: 1200px;
-  /* ↓これ使ってないな。あとでチェック */
   --card-width: 250px;
 
   /*==== Radius ====*/
@@ -165,10 +169,11 @@ Variables
   --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.08);
 
   /*==== Z-index ====*/
-  /* --z-header: 100;
-  --z-menu: 200;
-  --z-modal: 300;
-  --z-loading: 999; */
+  --z-sidebar: 100;
+  --z-info: 200;
+  --z-drawer: 300;
+  --z-modal: 400;
+  --z-loading: 999;
 
   /*==== Other ====*/
   --transition: 0.3s ease;
@@ -180,6 +185,7 @@ Base
 body {
   background: var(--color-bg-default);
   font-size: var(--fs-base);
+  font-family: var(--ff-ja);
   line-height: 1.8;
   color: var(--color-text-primary);
 }
@@ -192,6 +198,7 @@ h4,
 h5,
 h6 {
   font-weight: 500;
+  font-family: var(--ff-en);
   line-height: var(--lh-tight);
 }
 
@@ -212,12 +219,18 @@ Layout
 .main {
   margin-left: var(--sidebar-width);
 }
+.content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-2xl);
+}
 
 /* sectionのmarginBottom */
 .worksSection {
   max-width: var(--content-max);
   margin: 0 auto var(--space-5xl);
   padding: var(--space-xl) var(--space-2xl);
+  padding-bottom: calc(clamp(120px, 15vh, 140px) + var(--space-2xl));
 }
 
 /* sectionTitle */
@@ -257,6 +270,9 @@ Layout
 .headerLead {
   margin-top: var(--space-2xl);
   font-size: var(--fs-smBase);
+
+  font-weight: 300;
+  font-family: var(--ff-en);
   line-height: 2;
   opacity: 0.8;
 }
@@ -271,19 +287,19 @@ Layout
   gap: var(--space-sm);
   font-size: var(--fs-tiny);
 }
-.globalNav　a {
+.globalNav a {
   padding-left: 0;
 }
-.globalNav　a:hover {
+.globalNav a:hover {
   padding-left: 12px;
 }
-.globalNav　a::before {
+.globalNav a::before {
   width: 0;
   height: 1px;
   transition: 0.3s;
   content: "";
 }
-.globalNav　a:hover::before {
+.globalNav a:hover::before {
   width: 20px;
 }
 
@@ -309,12 +325,45 @@ Layout
   gap: var(--space-xl);
   grid-template-columns: repeat(4, var(--card-width));
 }
-.worksSection h2 {
+/* worksHeader */
+.sectionHeader {
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+.sectionLine {
+  width: 90px;
+  height: 1px;
+  background: var(--color-text-primary);
+
+  flex-shrink: 0;
+}
+.sectionTitle h2 {
   font-size: var(--fs-xl);
+  font-weight: 400;
+  font-family: var(--ff-en);
+  line-height: 1;
+  letter-spacing: 0.12em;
+}
+.sectionCopy {
+  max-width: 42ch;
+  margin-left: calc(clamp(70px, 8vw, 120px) + 100px);
+  padding-top: var(--space-2xl);
+
+  font-size: var(--fs-base);
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+
+  opacity: 0.7;
 }
 
 /* Card */
 .workCard {
+  height: 540px;
+
   background: transparent;
   transition:
     transform var(--transition),
@@ -326,19 +375,14 @@ Layout
   box-shadow: var(--shadow-lg);
 }
 .workCard a {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  color: inherit;
-}
-.workCard a:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 6px;
 }
 
 /* cardImg */
 .workCard figure {
   overflow: hidden;
-
   aspect-ratio: 4 / 5;
 }
 .workCard img {
@@ -351,28 +395,53 @@ Layout
 /* cardBody */
 .cardBody {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   padding: var(--space-sm) var(--space-lg);
+}
+/* Number + Category */
+.cardTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  margin-bottom: var(--space-xs);
 }
 .cardNumber {
   font-size: var(--fs-lg);
-  line-height: 1.2;
+  font-weight: 300;
+  font-family: var(--ff-en);
+  line-height: 1;
+}
+.cardCategory {
+  font-size: var(--fs-tiny);
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+}
+.cardBody h3 {
+  font-size: var(--fs-xs);
+}
+.cardText {
+  font-size: var(--fs-smBase);
+  color: var(--color-text-secondary);
 }
 
 /* カード矢印 */
 .cardLink {
   display: flex;
   align-items: center;
-
   gap: var(--space-md);
   margin-top: auto;
-  /* font-size: var(--fs-sm);
-  letter-spacing: 0.08em; */
+
+  font-family: var(--ff-en);
+  letter-spacing: 0.08em;
+}
+.cardLink span:first-child {
+  white-space: nowrap;
 }
 .arrow {
   position: relative;
-
   width: 60px;
   height: 1px;
 
@@ -381,7 +450,6 @@ Layout
   transition: width var(--transition);
   transform-origin: left;
 }
-
 .arrow::after {
   position: absolute;
 
@@ -448,10 +516,19 @@ Layout
   left: var(--sidebar-width);
   height: clamp(120px, 15vh, 140px);
 
+  background: var(--color-bg-default);
+
   grid-template-columns:
     1fr
     0.8fr
     1.4fr;
+}
+.infoInner {
+  display: grid;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--space-2xl);
+  grid-template-columns: 1fr 0.8fr 1.4fr;
 }
 .infoBox {
   padding: var(--space-md) var(--space-2xl);
@@ -510,21 +587,25 @@ Layout
 }
 
 /* contactBox */
+.contactTitle small {
+  margin-left: var(--space-sm);
+  font-size: var(--fs-caption);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
 .contactGrid {
   display: grid;
   padding-bottom: var(--space-xs);
   grid-template-columns: 1fr 1.4fr 1fr;
-
-  border-bottom: 1px solid var(--color-border-default);
 }
 .contactItem {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: var(--space-xs);
 
-  color: inherit;
   transition: var(--transition);
-  text-decoration: none;
 }
 .contactItem:not(:last-child) {
   border-right: 1px solid var(--color-border-default);
@@ -532,16 +613,13 @@ Layout
 .contactBox img {
   width: 20px;
   object-fit: contain;
-}
-.contactItem:hover {
-  transform: translateY(-3px);
-}
-
-.contactItem img {
   transition: var(--transition);
 }
+.contactItem:hover {
+  color: var(--color-text-secondary);
+}
 .contactItem:hover img {
-  transform: scale(1.08);
+  transform: translateY(-3px) scale(1.1);
 }
 .contactNote {
   padding-inline: var(--space-lg);
@@ -780,59 +858,6 @@ textarea:focus {
 /* =========================
 Components
 ========================= */
-/* btn */
-/* .btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-xs);
-  min-height: 56px;
-
-  padding: var(--space-sm) var(--space-lg);
-}
-.btnPrimary {
-  border-radius: var(--radius-md);
-  background: var(--color-accent-primary);
-  color: var(--color-text-inverse);
-}
-.btnPrimary:hover {
-  background: var(--color-accent-hover);
-  opacity: 1;
-}
-.btnGhost {
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-md);
-  color: var(--color-text-primary);
-}
-.btnGhost:hover {
-  background: var(--color-accent-soft-bg);
-} */
-
-/* Link */
-/* 下線あり */
-/* .linkUnderline {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-
-  padding-bottom: var(--space-xs);
-
-  border-bottom: 1px solid currentColor;
-} */
-/* 下線なし */
-/* .linkPlain {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-} */
-/* a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--color-accent-primary);
-  outline-offset: 2px;
-} */
 
 /* =========================
 Utility
