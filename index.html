@@ -77,7 +77,27 @@
   </head>
 
   <body>
-    <aside id="home" class="sidebar">
+    <!-- モバイルヘッダー -->
+    <header class="mobileHeader">
+      <button
+        class="drawerButton"
+        aria-label="メニュー"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="/" class="mobileLogo">BLANK</a>
+    </header>
+
+    <!-- 背景 -->
+    <div class="drawerOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
       <header class="sidebarHeader">
         <h1 class="siteLogo">
           <a href="/">
@@ -190,17 +210,17 @@
       </section>
 
       <section class="infoSection">
-        <div id="about" class="infoBox aboutBox">
-          <h2>ABOUT ME</h2>
+        <details id="about" class="infoAccordion infoBox aboutBox">
+          <summary>ABOUT ME</summary>
 
           <p class="infoBody">
             初めまして、BLANKです。 デザインからコーディングまで一貫して制作し、
             心地よく伝わるWebサイトを目指しています。
           </p>
-        </div>
+        </details>
 
-        <div id="skill" class="infoBox skillBox">
-          <h2>SKILL</h2>
+        <details id="skill" class="infoAccordion infoBox skillBox">
+          <summary>SKILL</summary>
 
           <ul class="infoBody">
             <li>
@@ -223,13 +243,13 @@
               Figma
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div id="contact" class="infoBox contactBox">
-          <h2 class="contactTitle">
+        <details id="contact" class="infoAccordion infoBox contactBox">
+          <summary class="contactTitle">
             CONTACT
             <small>Response within 2–3 business days.</small>
-          </h2>
+          </summary>
 
           <div class="contactGrid infoBody">
             <a href="/contact.html" class="contactItem">
@@ -239,7 +259,11 @@
 
             <a href="mailto:hello@blank-design.com" class="contactItem">
               <img src="assets/icon/mail.svg" alt="mailアイコン" />
-              <span>blank.design.jp@gmail.com</span>
+              <span>
+                blank.design.jp
+                <br class="mailBreak" />
+                @gmail.com
+              </span>
             </a>
 
             <a
@@ -255,8 +279,11 @@
               <span>@blank.design</span>
             </a>
           </div>
-        </div>
+        </details>
       </section>
     </main>
+
+    <script src="/js/accordion.js"></script>
+    <script src="/js/sidebar.js"></script>
   </body>
 </html>
