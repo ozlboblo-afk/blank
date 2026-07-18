@@ -1,25 +1,25 @@
 /* =========================
 Reset 
 ========================= */
-/* Box sizing */
+/* ==== Box sizing ==== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Margin reset */
+/* ==== Margin reset ==== */
 * {
   margin: 0;
 }
 
-/* Height */
+/* ==== Height ==== */
 html,
 body {
   height: 100%;
 }
 
-/* Body */
+/* ==== Body ==== */
 body {
   -webkit-font-smoothing: antialiased;
 }
@@ -28,7 +28,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Media */
+/* ==== Media ==== */
 img,
 picture,
 video,
@@ -38,7 +38,7 @@ svg {
   max-width: 100%;
 }
 
-/* Form */
+/* ==== Form ==== */
 input,
 button,
 textarea,
@@ -46,20 +46,20 @@ select {
   font: inherit;
 }
 
-/* Link */
+/* ==== Link ==== */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* List */
+/* ==== List ==== */
 ul,
 ol {
   padding: 0;
   list-style: none;
 }
 
-/* Table */
+/* ===== Table ===== */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -112,7 +112,7 @@ Variables
   /* ===== Overlay ===== */
   --color-overlay: rgba(15, 15, 13, 0.4);
 
-  /* Font Family */
+  /* ==== Font Family ==== */
   --ff-en: "Inter", sans-serif;
   --ff-ja: "Noto Sans JP", sans-serif;
   --ff-serif: "Noto Serif JP", serif;
@@ -131,12 +131,7 @@ Variables
   --fs-caption: clamp(1.1rem, 0.7vw, 1.2rem);
   --fs-micro: 1rem;
 
-  /*==== Line Height ====*/
-  --lh-tight: 1.2; /* 見出し（詰める） */
-  --lh-snug: 1.4; /* 中間（読みやすさ＋締まり） */
-  --lh-base: 1.6; /* 本文（可読性重視） */
-
-  /*==== Spacing ====*/
+  /* ==== Spacing ==== */
   --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
@@ -149,13 +144,13 @@ Variables
   --space-5xl: 128px;
   --mobile-header-height: 64px;
 
-  /*==== Width ====*/
+  /* ==== Width ==== */
   --sidebar-width: 220px;
   --content-max-sm: 900px;
   --content-max: 1200px;
   --card-width: clamp(220px, 18vw, 250px);
 
-  /*==== Radius ====*/
+  /* ==== Radius ==== */
   --radius-xs: 4px;
   --radius-sm: 6px;
   --radius-md: 8px;
@@ -163,20 +158,19 @@ Variables
   --radius-xl: 16px;
   --radius-round: 999px;
 
-  /*==== shadow ====*/
+  /* ==== shadow ==== */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
   --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.08);
 
-  /*==== Z-index ====*/
-  --z-sidebar: 100;
-  --z-info: 200;
-  --z-drawer: 300;
-  --z-modal: 400;
-  --z-loading: 999;
+  /* ==== Z-index ==== */
+  --z-overlay: 100;
+  --z-sidebar: 200;
+  --z-info: 300;
+  --z-modal: 500;
 
-  /*==== Other ====*/
+  /* ==== Other ==== */
   --transition: 0.3s ease;
 }
 
@@ -191,7 +185,7 @@ body {
   color: var(--color-text-primary);
 }
 
-/* Heading */
+/* ==== Heading ==== */
 h1,
 h2,
 h3,
@@ -203,7 +197,7 @@ h6 {
   line-height: var(--lh-tight);
 }
 
-/* Link */
+/* ==== Link ==== */
 a,
 button {
   transition: var(--transition);
@@ -216,27 +210,103 @@ select {
 /* =========================
 Layout
 ========================= */
-/*==== 共通レイアウト ====*/
-.main {
-  margin-left: var(--sidebar-width);
-}
-
-/* sectionTitle */
-.sectionHeader {
-  margin-bottom: var(--space-2xl);
-}
-
-/* モバイルheader */
+/* --------------------------
+Mobile Header
+-------------------------- */
 .mobileHeader {
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  justify-content: center;
+  align-items: center;
+
+  height: var(--mobile-header-height);
+  padding-inline: var(--space-lg);
+
+  background: var(--color-bg-default);
+  border-bottom: 1px solid var(--color-border-default);
+}
+/* ハンバーガー */
+.drawerButton {
+  display: flex;
+
+  position: absolute;
+
+  left: var(--space-lg);
+
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background: none;
+
+  cursor: pointer;
+}
+/* 三本線 */
+.drawerButton span {
+  position: absolute;
+
+  width: 24px;
+  height: 2px;
+
+  background: #222;
+
+  transition: 0.3s;
+}
+.drawerButton span:nth-child(1) {
+  transform: translateY(-7px);
+}
+.drawerButton span:nth-child(3) {
+  transform: translateY(7px);
 }
 
-/*==== sidebar ====*/
+/* 開いたら× */
+.drawerButton.is-open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.drawerButton.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.drawerButton.is-open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.mobileLogo {
+  font-size: var(--fs-xs);
+  font-family: var(--ff-en);
+  letter-spacing: 0.25em;
+}
+
+/* --------------------------
+drawerOverlay
+-------------------------- */
+.drawerOverlay {
+  position: fixed;
+
+  z-index: var(--z-overlay);
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+
+  transition: 0.3s;
+  inset: 0;
+  visibility: hidden;
+}
+
+/* --------------------------
+sidebar
+-------------------------- */
 .sidebar {
   display: flex;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: var(--z-sidebar);
   flex-direction: column;
 
   width: var(--sidebar-width);
@@ -259,7 +329,9 @@ Layout
   background: transparent;
 }
 
-/* Header */
+/* --------------------------
+Header
+-------------------------- */
 .sidebarHeader {
   display: flex;
   flex-direction: column;
@@ -285,7 +357,9 @@ Layout
   font-size: var(--fs-tiny);
 }
 
-/* Nav */
+/* --------------------------
+Nav
+-------------------------- */
 .globalNav ul {
   display: flex;
   flex-direction: column;
@@ -301,14 +375,16 @@ Layout
 .globalNav a::before {
   width: 0;
   height: 1px;
-  transition: 0.3s;
+  transition: var(--transition);
   content: "";
 }
 .globalNav a:hover::before {
   width: 20px;
 }
 
-/* Footer */
+/* --------------------------
+Footer
+-------------------------- */
 .sidebarFooter {
   margin-top: auto;
   padding-top: var(--space-md);
@@ -324,7 +400,16 @@ Layout
   font-size: var(--fs-tiny);
 }
 
-/*==== works ====*/
+/* --------------------------
+Main
+-------------------------- */
+.main {
+  margin-left: var(--sidebar-width);
+}
+
+/* --------------------------
+works
+-------------------------- */
 .worksSection {
   max-width: var(--content-max);
   min-height: 100vh;
@@ -334,16 +419,10 @@ Layout
   padding-bottom: calc(clamp(110px, 15vh, 140px) + var(--space-2xl));
   padding-inline: var(--space-2xl);
 }
-/* Grid */
-.worksGrid {
-  display: grid;
-  justify-content: center;
-  gap: var(--space-xl);
-  grid-template-columns: repeat(4, var(--card-width));
-}
-/* worksHeader */
+
+/* sectionTitle */
 .sectionHeader {
-  margin-bottom: clamp(40px, 6vw, 72px);
+  margin-bottom: var(--space-2xl);
 }
 .sectionTitle {
   display: flex;
@@ -376,114 +455,12 @@ Layout
   opacity: 0.7;
 }
 
-/* Card */
-.workCard {
-  height: 540px;
-
-  background: transparent;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-  box-shadow: var(--shadow-card);
-}
-.workCard:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-}
-.workCard a {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* cardImg */
-.workCard figure {
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-}
-.workCard img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
-/* cardBody */
-.cardBody {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--space-xs);
-  padding: var(--space-sm) var(--space-lg);
-}
-/* Number + Category */
-.cardTitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-
-  margin-bottom: var(--space-xs);
-}
-.cardNumber {
-  font-size: var(--fs-lg);
-  font-weight: 300;
-  font-family: var(--ff-en);
-  line-height: 1;
-}
-.cardCategory {
-  font-size: var(--fs-tiny);
-  letter-spacing: 0.08em;
-  color: var(--color-text-secondary);
-}
-.cardBody h3 {
-  font-size: var(--fs-xs);
-}
-.cardText {
-  font-size: var(--fs-smBase);
-  color: var(--color-text-secondary);
-}
-
-/* カード矢印 */
-.cardLink {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-top: auto;
-
-  font-family: var(--ff-en);
-  letter-spacing: 0.08em;
-}
-.cardLink span:first-child {
-  white-space: nowrap;
-}
-.arrow {
-  position: relative;
-  width: 60px;
-  height: 1px;
-
-  background: currentColor;
-
-  transition: width var(--transition);
-  transform-origin: left;
-}
-.arrow::after {
-  position: absolute;
-
-  top: 50%;
-  right: -1px;
-
-  transform: translateY(-50%) rotate(45deg);
-
-  width: 8px;
-  height: 8px;
-
-  border-top: 1px solid currentColor;
-  border-right: 1px solid currentColor;
-
-  content: "";
-}
-.workCard:hover .arrow {
-  width: 90px;
+/* Grid */
+.worksGrid {
+  display: grid;
+  justify-content: center;
+  gap: var(--space-xl);
+  grid-template-columns: repeat(4, var(--card-width));
 }
 
 /* numberColor */
@@ -500,30 +477,9 @@ Layout
   color: var(--project-04);
 }
 
-/*==== comingSoon ====*/
-.workCard--comingSoon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px dashed var(--color-border-default);
-  background: transparent;
-  box-shadow: none;
-}
-.comingSoon {
-  text-align: center;
-}
-.comingSoon span {
-  display: block;
-  font-size: var(--fs-xl);
-  color: var(--color-text-muted);
-}
-.comingSoon p {
-  margin-top: var(--space-sm);
-  letter-spacing: 0.08em;
-  color: var(--color-text-muted);
-}
-
-/*==== Info ====*/
+/* --------------------------
+Info
+-------------------------- */
 .infoSection {
   display: grid;
   position: fixed;
@@ -542,48 +498,6 @@ Layout
 
   border-top: 1px solid var(--color-border);
 }
-.infoInner {
-  display: grid;
-
-  padding-inline: var(--space-2xl);
-}
-.infoBox {
-  padding: var(--space-md) var(--space-2xl);
-}
-.infoBox summary {
-  font-size: var(--fs-base);
-  cursor: default;
-  list-style: none;
-}
-.infoAccordion summary::-webkit-details-marker {
-  display: none;
-} /* + */
-.infoAccordion summary::after {
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 1;
-
-  transition: transform 0.25s ease;
-  content: "+";
-}
-.infoAccordion summary {
-  color: var(--color-text-secondary);
-
-  transition: 0.25s;
-}
-
-.infoAccordion[open] summary {
-  color: var(--color-text-primary);
-}
-
-/* - */
-.infoAccordion[open] summary::after {
-  content: "−";
-}
-.infoBody {
-  margin-top: var(--space-md);
-  font-size: var(--fs-tiny);
-}
 
 /* 線 */
 .infoSection::before {
@@ -597,6 +511,45 @@ Layout
   content: "";
 }
 
+/* infoAccordion */
+.infoAccordion {
+  padding: var(--space-md) var(--space-2xl);
+}
+.infoAccordion summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  cursor: default;
+
+  transition: 0.25s;
+  list-style: none;
+}
+.infoAccordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* + */
+.infoAccordion summary::after {
+  display: none;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1;
+
+  transition: transform 0.25s ease;
+  content: "+";
+}
+.infoAccordion[open] summary {
+  color: var(--color-text-primary);
+}
+
+/* - */
+.infoAccordion[open] summary::after {
+  content: "−";
+}
+
+/* infoBoxの線 */
 .aboutBox,
 .skillBox {
   position: relative;
@@ -612,6 +565,12 @@ Layout
 
   background: var(--color-border-default);
   content: "";
+}
+
+/* infoBox */
+.infoBody {
+  margin-top: var(--space-md);
+  font-size: var(--fs-tiny);
 }
 
 /* aboutBox */
@@ -661,21 +620,16 @@ Layout
 .contactItem:not(:last-child) {
   border-right: 1px solid var(--color-border-default);
 }
-.contactBox img {
+.contactItem:hover {
+  color: var(--color-text-secondary);
+}
+.contactItem img {
   width: 20px;
   object-fit: contain;
   transition: var(--transition);
 }
-.contactItem:hover {
-  color: var(--color-text-secondary);
-}
 .contactItem:hover img {
   transform: translateY(-3px) scale(1.1);
-}
-.contactNote {
-  padding-inline: var(--space-lg);
-  font-size: var(--fs-tiny);
-  color: var(--color-text-secondary);
 }
 .contactItem span {
   text-align: center;
@@ -684,84 +638,19 @@ Layout
   display: none;
 }
 
-/*==== subページ共通レイアウト ====*/
-.privacyPolicy,
-.error404,
-.thanks,
-.contactPage,
-.legalPage {
+/* --------------------------
+Sub Pages
+-------------------------- */
+.pageInner {
   max-width: var(--content-max-sm);
-  margin: 0 auto;
-  padding: var(--space-5xl) var(--space-2xl);
+  margin-inline: auto;
+  padding: clamp(96px, 12vw, 128px) clamp(20px, 5vw, 48px);
 }
 
-/* Backボタン */
-.backLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-
-  margin-top: var(--space-5xl);
-
-  font-size: var(--fs-smBase);
-
-  letter-spacing: 0.12em;
-}
-.backLink:hover {
-  gap: 20px;
-}
-/* 矢印 */
-.backLink span {
-  width: 40px;
-  height: 1px;
-
-  background: currentColor;
-  transition: var(--transition);
-
-  content: "";
-}
-
-/*==== プライバシーポリシー/legal.html ====*/
-/* ヘッダー */
-.privacyHeader {
-  margin-bottom: var(--space-5xl);
-}
-.sectionEyebrow {
-  margin-bottom: var(--space-sm);
-
-  font-size: var(--fs-smBase);
-  letter-spacing: 0.2em;
-
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-}
-.privacyHeader h1 {
-  font-size: var(--fs-xl);
-}
-/* 本文 */
-.privacyBody {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4xl);
-}
-/* 各セクション */
-.privacySection {
-  padding-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--color-border-default);
-}
-/* 見出し */
-.privacySection h2 {
-  margin-bottom: var(--space-md);
-  font-size: var(--fs-xs);
-}
-/* 本文 */
-.privacySection p {
-  line-height: 1.9;
-  color: var(--color-text-secondary);
-}
-
-/*==== 404.html ====*/
-.error404 {
+/* --------------------------
+404.html
+-------------------------- */
+.error404 .pageInner {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -792,8 +681,124 @@ Layout
   color: var(--color-text-secondary);
 }
 
-/* ==== Thanks ==== */
-.thanks {
+/* --------------------------
+contact
+-------------------------- */
+/* contactHeader */
+.contactHeader {
+  margin-bottom: var(--space-4xl);
+}
+.contactLead {
+  margin-top: var(--space-lg);
+}
+
+/* contactForm */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* btn */
+.contactSubmit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: fit-content;
+
+  border: none;
+  background: none;
+  font: inherit;
+
+  color: inherit;
+  cursor: pointer;
+}
+.contactLabel {
+  font-size: var(--fs-base);
+  letter-spacing: 0.08em;
+}
+
+/* 下段 */
+.contactArrow {
+  position: relative;
+  width: 180px;
+  height: 1px;
+
+  background: var(--color-text-primary);
+
+  transition: width var(--transition);
+}
+
+/* 矢印 */
+.contactArrow::after {
+  position: absolute;
+  top: 50%;
+  right: -1px;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  width: 10px;
+  height: 10px;
+
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+
+  content: "";
+}
+/* Hover */
+.contactSubmit:hover .contactArrow {
+  width: 240px;
+}
+
+/* --------------------------
+legal/privacy.html
+-------------------------- */
+/* ヘッダー */
+.privacyHeader {
+  margin-bottom: var(--space-5xl);
+}
+.sectionEyebrow {
+  margin-bottom: var(--space-sm);
+
+  font-size: var(--fs-smBase);
+  letter-spacing: 0.2em;
+
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+.privacyHeader h1 {
+  font-size: var(--fs-xl);
+}
+
+/* 本文 */
+.privacyBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+}
+
+/* 各セクション */
+.privacySection {
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+/* 見出し */
+.privacySection h2 {
+  margin-bottom: var(--space-md);
+  font-size: var(--fs-xs);
+}
+
+/* 本文 */
+.privacySection p {
+  line-height: 1.9;
+  color: var(--color-text-secondary);
+}
+
+/* --------------------------
+Thanks
+-------------------------- */
+.thanks .pageInner {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -820,21 +825,153 @@ Layout
   color: var(--color-text-secondary);
 }
 
-/* ==== contact ==== */
-/* contactHeader */
-.contactHeader {
-  margin-bottom: var(--space-4xl);
-}
-.contactLead {
-  margin-top: var(--space-lg);
-}
+/* =========================
+Components
+========================= */
+/* --------------------------
+Card
+-------------------------- */
+.workCard {
+  height: 540px;
 
-/* contactForm */
-.contactForm {
+  background: transparent;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+  box-shadow: var(--shadow-card);
+}
+.workCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.workCard a {
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+/* cardImg */
+.workCard figure {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+.workCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* cardBody */
+.cardBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+/* Number + Category */
+.cardTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  margin-bottom: var(--space-xs);
+}
+.cardNumber {
+  font-size: var(--fs-lg);
+  font-weight: 300;
+  font-family: var(--ff-en);
+  line-height: 1;
+}
+.cardCategory {
+  font-size: var(--fs-tiny);
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+}
+.cardBody h3 {
+  font-size: var(--fs-xs);
+}
+.cardText {
+  font-size: var(--fs-smBase);
+  color: var(--color-text-secondary);
+}
+
+/* --------------------------
+Arrow
+-------------------------- */
+.cardLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: auto;
+
+  font-family: var(--ff-en);
+  letter-spacing: 0.08em;
+}
+.cardLink span:first-child {
+  white-space: nowrap;
+}
+
+.arrow {
+  position: relative;
+  width: clamp(32px, 3vw, 40px);
+  height: 1px;
+
+  background: currentColor;
+
+  transition: width 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  transform-origin: left;
+}
+.arrow::after {
+  position: absolute;
+  top: 50%;
+  right: -1px;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  width: 8px;
+  height: 8px;
+
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+
+  content: "";
+}
+.workCard:hover .arrow {
+  width: clamp(48px, 4vw, 64px);
+}
+
+/* --------------------------
+BackBtn
+-------------------------- */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-5xl);
+
+  font-size: var(--fs-smBase);
+  letter-spacing: 0.12em;
+}
+.backLink:hover {
   gap: var(--space-xl);
 }
+.backLink span {
+  width: 40px;
+  height: 1px;
+
+  background: currentColor;
+  transition: var(--transition);
+
+  content: "";
+}
+
+/* --------------------------
+FormItem
+-------------------------- */
 .formItem {
   display: flex;
   flex-direction: column;
@@ -849,8 +986,8 @@ Layout
   font-size: var(--fs-caption);
   color: var(--color-text-muted);
 }
-input,
-textarea {
+.formItem input,
+.formItem textarea {
   width: 100%;
   padding: var(--space-sm);
 
@@ -858,64 +995,42 @@ textarea {
   background: var(--color-bg-subtle);
   border-bottom: 1px solid var(--color-border-default);
 }
-input:focus,
-textarea:focus {
+.formItem input:focus,
+.formItem textarea:focus {
   outline: none;
   border-color: var(--color-text-muted);
 }
-/* btn */
-.contactSubmit {
+
+/* --------------------------
+comingSoon
+-------------------------- */
+.workCardComingSoon {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  width: fit-content;
-
-  border: none;
-  background: none;
-  font: inherit;
-
-  color: inherit;
-  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed var(--color-border-default);
+  background: transparent;
+  box-shadow: none;
 }
-.contactLabel {
-  font-size: var(--fs-base);
+.comingSoon {
+  text-align: center;
+}
+.comingSoon span {
+  display: block;
+  font-size: var(--fs-xl);
+  color: var(--color-text-muted);
+}
+.comingSoon p {
+  margin-top: var(--space-sm);
   letter-spacing: 0.08em;
-}
-/* 下段 */
-.contactArrow {
-  position: relative;
-  width: 180px;
-  height: 1px;
-
-  background: var(--color-text-primary);
-
-  transition: width 0.35s ease;
-}
-/* 矢印 */
-.contactArrow::after {
-  position: absolute;
-  top: 50%;
-  right: -1px;
-
-  transform: translateY(-50%) rotate(45deg);
-
-  width: 10px;
-  height: 10px;
-
-  border-top: 1px solid currentColor;
-  border-right: 1px solid currentColor;
-
-  content: "";
-}
-/* Hover */
-.contactSubmit:hover .contactArrow {
-  width: 240px;
+  color: var(--color-text-muted);
 }
 
-/* =========================
-Components
-========================= */
+/* Accordion */
 
+/*Button */
+
+/* Drawer */
 /* =========================
 Utility
 ========================= */
@@ -938,10 +1053,10 @@ Media Queries
     padding-inline: var(--space-lg);
   }
   .worksGrid {
-    gap: 24px;
+    gap: var(--space-lg);
   }
-  .infoBox {
-    padding: var(--space-md) var(--space-sm);
+  .infoAccordion {
+    padding-inline: var(--space-sm);
   }
 }
 
@@ -963,6 +1078,7 @@ Media Queries
   .workCard {
     height: 320px;
   }
+
   /* infoSection */
   .infoSection {
     display: flex;
@@ -975,17 +1091,17 @@ Media Queries
   .infoAccordion {
     border-top: 1px solid var(--color-border-default);
   }
-  .infoAccordion:last-child {
-    /* これ見えない気がする　いらなくない？ */
-    border-bottom: 1px solid var(--color-border-default);
-  }
   .infoAccordion summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding-inline: var(--space-xl);
-
     cursor: pointer;
+  }
+  .infoAccordion summary::after {
+    display: block;
+  }
+  /* box毎の区切り線を消す */
+  .aboutBox::after,
+  .skillBox::after {
+    display: none;
   }
   .infoBody {
     padding: 0 var(--space-xl) var(--space-lg);
@@ -997,11 +1113,6 @@ Media Queries
     display: flex;
     gap: var(--space-xl);
   }
-  /* box毎の区切り線を消す */
-  .aboutBox::after,
-  .skillBox::after {
-    display: none;
-  }
 }
 
 /* large tablet */
@@ -1010,6 +1121,19 @@ Media Queries
 
 /* mobile */
 @media (max-width: 768px) {
+  .mobileHeader {
+    display: flex;
+  }
+  .drawerOverlay.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.is-open {
+    transform: none;
+  }
   .main {
     margin-left: 0;
   }
@@ -1019,110 +1143,17 @@ Media Queries
   .infoSection {
     left: 0;
   }
-
-  /* モバイルheader */
-  .mobileHeader {
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-
-    z-index: var(--z-sidebar);
-
-    justify-content: center;
-    align-items: center;
-
-    height: var(--mobile-header-height);
-    padding-inline: var(--space-lg);
-
-    background: var(--color-bg-default);
-    border-bottom: 1px solid var(--color-border-default);
+  .privacyHeader {
+    margin-bottom: var(--space-4xl);
   }
-  .mobileLogo {
-    font-size: var(--fs-xs);
-    font-family: var(--ff-en);
-    letter-spacing: 0.25em;
+  .privacyHeader h1 {
+    font-size: var(--fs-lg);
   }
-
-  .sidebar {
-    z-index: 1000;
-    transform: translateX(-100%);
-
-    width: 300px;
+  .privacyBody {
+    gap: var(--space-3xl);
   }
-
-  .sidebar.is-open {
-    transform: none;
-  }
-  /* 背景 */
-  .drawerOverlay {
-    position: fixed;
-
-    z-index: 900;
-
-    background: rgba(0, 0, 0, 0.35);
-
-    opacity: 0;
-
-    transition: 0.3s;
-    inset: 0;
-    visibility: hidden;
-  }
-
-  .drawerOverlay.is-open {
-    opacity: 1;
-    visibility: visible;
-  }
-  /* ハンバーガー */
-  .drawerButton {
-    display: flex;
-
-    position: absolute;
-
-    left: var(--space-lg);
-
-    justify-content: center;
-    align-items: center;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-    background: none;
-
-    cursor: pointer;
-  }
-  /* 三本線 */
-  .drawerButton span {
-    position: absolute;
-
-    width: 24px;
-    height: 2px;
-
-    background: #222;
-
-    transition: 0.3s;
-  }
-
-  .drawerButton span:nth-child(1) {
-    transform: translateY(-7px);
-  }
-
-  .drawerButton span:nth-child(3) {
-    transform: translateY(7px);
-  }
-  /* 開いたら× */
-  .drawerButton.is-open span:nth-child(1) {
-    transform: rotate(45deg);
-  }
-
-  .drawerButton.is-open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .drawerButton.is-open span:nth-child(3) {
-    transform: rotate(-45deg);
+  .privacySection {
+    padding-bottom: var(--space-lg);
   }
 }
 

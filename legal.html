@@ -24,7 +24,7 @@
     <!-- ==== Canonical ==== -->
     <link
       rel="canonical"
-      href="https://blank-4v37ugar1-blank-design.vercel.app/contact.html"
+      href="https://blank-eight-mu.vercel.app/contact.html"
     />
 
     <!-- ==== OGP ==== -->
@@ -36,11 +36,11 @@
     <!-- ogpの画像はつくりかえる -->
     <meta
       property="og:image"
-      content="https://blank-4v37ugar1-blank-design.vercel.app/assets/img/ogp.png"
+      content="https://blank-eight-mu.vercel.app/assets/img/ogp.png"
     />
     <meta
       property="og:url"
-      content="https://blank-4v37ugar1-blank-design.vercel.app/contact.html"
+      content="https://blank-eight-mu.vercel.app/contact.html"
     />
 
     <meta property="og:type" content="website" />
@@ -49,6 +49,10 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://blank-eight-mu.vercel.app/assets/img/ogp.png"
+    />
 
     <!-- Theme -->
     <meta name="theme-color" content="#2F241D" />
@@ -62,9 +66,29 @@
   </head>
 
   <body>
-    <aside id="home" class="sidebar">
+    <!-- モバイルヘッダー -->
+    <header class="mobileHeader">
+      <button
+        class="drawerButton"
+        aria-label="メニュー"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="/" class="mobileLogo">BLANK</a>
+    </header>
+
+    <!-- 背景 -->
+    <div class="drawerOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
       <header class="sidebarHeader">
-        <p class="siteLogo">
+        <h1 class="siteLogo">
           <a href="/">
             <img
               src="assets/icon/logo.svg"
@@ -72,7 +96,7 @@
               alt="BLANK Portfolio"
             />
           </a>
-        </p>
+        </h1>
 
         <div class="headerLead">
           <p>
@@ -87,9 +111,9 @@
         <nav class="globalNav">
           <ul>
             <li><a href="/">TOP</a></li>
-            <li><a href="/#works">WORKS</a></li>
-            <li><a href="/#about">ABOUT</a></li>
-            <li><a href="/#skill">SKILL</a></li>
+            <li><a href="#works">WORKS</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skill">SKILL</a></li>
             <li><a href="/contact.html">CONTACT</a></li>
           </ul>
         </nav>
@@ -112,71 +136,75 @@
       </footer>
     </aside>
 
-    <main class="legalPage">
-      <div class="containerSm">
-        <div class="privacyHeader">
-          <p class="sectionEyebrow">Legal</p>
+    <main class="main legalPage">
+      <div class="pageInner">
+        <div class="containerSm">
+          <div class="privacyHeader">
+            <p class="sectionEyebrow">Legal</p>
 
-          <h1>特定商取引法に基づく表記</h1>
+            <h1>特定商取引法に基づく表記</h1>
+          </div>
+
+          <div class="privacyBody">
+            <section class="privacySection">
+              <h2>販売事業者</h2>
+
+              <p>BLANK</p>
+            </section>
+
+            <section class="privacySection">
+              <h2>代表者</h2>
+
+              <p>BLANK</p>
+            </section>
+
+            <section class="privacySection">
+              <h2>所在地</h2>
+
+              <p>請求があった場合、遅滞なく開示いたします。</p>
+            </section>
+
+            <section class="privacySection">
+              <h2>メールアドレス</h2>
+
+              <p>お問い合わせフォームよりご連絡ください。</p>
+            </section>
+
+            <section class="privacySection">
+              <h2>販売価格</h2>
+
+              <p>各お見積りにてご案内いたします。</p>
+            </section>
+
+            <section class="privacySection">
+              <h2>お支払い方法</h2>
+
+              <p>銀行振込</p>
+            </section>
+
+            <section class="privacySection">
+              <h2>お支払い時期</h2>
+
+              <p>契約締結後、ご請求書記載の日程までにお支払いください。</p>
+            </section>
+
+            <section class="privacySection">
+              <h2>キャンセル</h2>
+
+              <p>
+                制作開始後のキャンセルについては進捗状況に応じた費用をご請求する場合があります。
+              </p>
+            </section>
+          </div>
         </div>
 
-        <div class="privacyBody">
-          <section class="privacySection">
-            <h2>販売事業者</h2>
-
-            <p>BLANK</p>
-          </section>
-
-          <section class="privacySection">
-            <h2>代表者</h2>
-
-            <p>BLANK</p>
-          </section>
-
-          <section class="privacySection">
-            <h2>所在地</h2>
-
-            <p>請求があった場合、遅滞なく開示いたします。</p>
-          </section>
-
-          <section class="privacySection">
-            <h2>メールアドレス</h2>
-
-            <p>お問い合わせフォームよりご連絡ください。</p>
-          </section>
-
-          <section class="privacySection">
-            <h2>販売価格</h2>
-
-            <p>各お見積りにてご案内いたします。</p>
-          </section>
-
-          <section class="privacySection">
-            <h2>お支払い方法</h2>
-
-            <p>銀行振込</p>
-          </section>
-
-          <section class="privacySection">
-            <h2>お支払い時期</h2>
-
-            <p>契約締結後、ご請求書記載の日程までにお支払いください。</p>
-          </section>
-
-          <section class="privacySection">
-            <h2>キャンセル</h2>
-
-            <p>
-              制作開始後のキャンセルについては進捗状況に応じた費用をご請求する場合があります。
-            </p>
-          </section>
-        </div>
+        <a href="/" class="backLink">
+          <span></span>
+          Back
+        </a>
       </div>
-
-      <a href="/" class="backLink">
-        <span></span>
-        Back
-      </a>
     </main>
+
+    <script src="/js/sidebar.js"></script>
   </body>
 </html>

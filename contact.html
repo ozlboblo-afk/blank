@@ -24,7 +24,7 @@
     <!-- ==== Canonical ==== -->
     <link
       rel="canonical"
-      href="https://blank-4v37ugar1-blank-design.vercel.app/contact.html"
+      href="https://blank-eight-mu.vercel.app/contact.html"
     />
 
     <!-- ==== OGP ==== -->
@@ -36,11 +36,11 @@
     <!-- ogpの画像はつくりかえる -->
     <meta
       property="og:image"
-      content="https://blank-4v37ugar1-blank-design.vercel.app/assets/img/ogp.png"
+      content="https://blank-eight-mu.vercel.app/assets/img/ogp.png"
     />
     <meta
       property="og:url"
-      content="https://blank-4v37ugar1-blank-design.vercel.app/contact.html"
+      content="https://blank-eight-mu.vercel.app/contact.html"
     />
 
     <meta property="og:type" content="website" />
@@ -49,6 +49,10 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://blank-eight-mu.vercel.app/assets/img/ogp.png"
+    />
 
     <!-- Theme -->
     <meta name="theme-color" content="#2F241D" />
@@ -62,9 +66,29 @@
   </head>
 
   <body>
-    <aside id="home" class="sidebar">
+    <!-- モバイルヘッダー -->
+    <header class="mobileHeader">
+      <button
+        class="drawerButton"
+        aria-label="メニュー"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="/" class="mobileLogo">BLANK</a>
+    </header>
+
+    <!-- 背景 -->
+    <div class="drawerOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
       <header class="sidebarHeader">
-        <p class="siteLogo">
+        <h1 class="siteLogo">
           <a href="/">
             <img
               src="assets/icon/logo.svg"
@@ -72,7 +96,7 @@
               alt="BLANK Portfolio"
             />
           </a>
-        </p>
+        </h1>
 
         <div class="headerLead">
           <p>
@@ -87,9 +111,9 @@
         <nav class="globalNav">
           <ul>
             <li><a href="/">TOP</a></li>
-            <li><a href="/#works">WORKS</a></li>
-            <li><a href="/#about">ABOUT</a></li>
-            <li><a href="/#skill">SKILL</a></li>
+            <li><a href="#works">WORKS</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skill">SKILL</a></li>
             <li><a href="/contact.html">CONTACT</a></li>
           </ul>
         </nav>
@@ -112,8 +136,8 @@
       </footer>
     </aside>
 
-    <main class="contactPage">
-      <div class="containerSm">
+    <main class="main contactPage">
+      <div class="pageInner">
         <div class="contactHeader">
           <p class="sectionEyebrow">Contact</p>
           <h1>お問い合わせ</h1>
@@ -159,7 +183,14 @@
             <span class="contactArrow"></span>
           </button>
         </form>
+
+        <a href="/" class="backLink">
+          <span></span>
+          Back
+        </a>
       </div>
     </main>
+
+    <script src="/js/sidebar.js"></script>
   </body>
 </html>
