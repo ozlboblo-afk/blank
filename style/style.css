@@ -1,25 +1,25 @@
 /* =========================
 Reset 
-========================= */
-/* ==== Box sizing ==== */
+=====================*/
+/* Box sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* ==== Margin reset ==== */
+/* Margin reset */
 * {
   margin: 0;
 }
 
-/* ==== Height ==== */
+/* Height */
 html,
 body {
   height: 100%;
 }
 
-/* ==== Body ==== */
+/* Body */
 body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -29,7 +29,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ==== Media ==== */
+/* Media */
 img,
 picture,
 video,
@@ -39,7 +39,7 @@ svg {
   max-width: 100%;
 }
 
-/* ==== Form ==== */
+/* Form */
 input,
 button,
 textarea,
@@ -47,20 +47,20 @@ select {
   font: inherit;
 }
 
-/* ==== Link ==== */
+/* Link */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ==== List ==== */
+/* List */
 ul,
 ol {
   padding: 0;
   list-style: none;
 }
 
-/* ===== Table ===== */
+/* Table */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -68,13 +68,13 @@ table {
 
 /* =========================
 Variables
-========================= */
+=====================*/
 :root {
-  /* ===== Base ===== */
+  /* Base */
   --black: #1f1c1a;
   --white: #ffffff;
 
-  /* ===== Greige ===== */
+  /* Greige */
   --greige-100: #f7f4ef;
   --greige-200: #ece7df;
   --greige-300: #d8d1c8;
@@ -84,41 +84,41 @@ Variables
   --greige-700: #403933;
   --greige-800: #2b241f;
 
-  /* ===== Background ===== */
+  /* Background */
   --color-bg-default: var(--greige-100);
   --color-bg-subtle: var(--greige-200);
   --color-sidebar: var(--greige-800);
 
-  /* ===== Surface ===== */
+  /* Surface */
   --color-surface-default: var(--white);
   --color-surface-subtle: var(--greige-200);
 
-  /* ===== Text ===== */
+  /* Text */
   --color-text-primary: var(--black);
   --color-text-secondary: var(--greige-600);
   --color-text-muted: var(--greige-500);
   --color-text-inverse: var(--white);
   --color-text-inverse-muted: rgba(255, 255, 255, 0.45);
 
-  /* ===== Project Accent ===== */
+  /* Project Accent */
   --project-01: #c88a47;
   --project-02: #7f9b63;
   --project-03: #b56543;
   --project-04: #4c67c9;
 
-  /* ===== Border ===== */
+  /* Border */
   --color-border-default: var(--greige-300);
   --color-border-subtle: var(--greige-200);
 
-  /* ===== Overlay ===== */
+  /* Overlay */
   --color-overlay: rgba(15, 15, 13, 0.4);
 
-  /* ==== Font Family ==== */
+  /* Font Family */
   --ff-en: "Inter", sans-serif;
   --ff-ja: "Noto Sans JP", sans-serif;
   --ff-serif: "Noto Serif JP", serif;
 
-  /* ===== Font Size ===== */
+  /* Font Size */
   --fs-xxl: clamp(4rem, 4vw, 4.8rem);
   --fs-xl: clamp(3.4rem, 3vw, 4rem);
   --fs-lg: clamp(3rem, 2.5vw, 3.4rem);
@@ -132,11 +132,11 @@ Variables
   --fs-caption: clamp(1.1rem, 0.7vw, 1.2rem);
   --fs-micro: 1rem;
 
-  /* ==== Line Height ==== */
+  /* Line Height */
   --lh-tight: 1.2;
   --lh-base: 1.8;
 
-  /* ==== Spacing ==== */
+  /* Spacing */
   --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
@@ -148,7 +148,7 @@ Variables
   --space-4xl: 96px;
   --space-5xl: 128px;
 
-  /* ==== Width ==== */
+  /* Width */
   --content-xs: 420px;
   --content-sm: 560px;
   --content-md: 760px;
@@ -156,7 +156,7 @@ Variables
   --content-xl: 1200px;
   --content-2xl: 1400px;
 
-  /* ==== Layout ==== */
+  /* Layout */
   --mobile-header-height: 64px;
   --mobile-bottom-height: 64px;
   --sidebar-width: 220px;
@@ -164,18 +164,16 @@ Variables
   --card-width: clamp(220px, 18vw, 250px);
   --card-ratio: 16 / 10;
 
-  /* ==== Work ==== */
-  /*  */
-  /* 2行になるとき--work-visual-height: clamp(160px, 13vw, 200px); */
+  /* Work */
   --work-visual-height: clamp(160px, 13vw, 400px);
   --work-detail-width: 480px;
   --work-gap: clamp(32px, 4vw, 64px);
 
-  /* ===== Section ===== */
+  /* Section */
   --section-space: clamp(100px, 10vw, 160px);
   --section-space-sm: 80px;
 
-  /* ==== Radius ==== */
+  /* Radius */
   --radius-xs: 4px;
   --radius-sm: 6px;
   --radius-md: 8px;
@@ -184,19 +182,19 @@ Variables
   --radius-2xl: 24px;
   --radius-round: 999px;
 
-  /* ==== shadow ==== */
+  /* shadow */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
 
-  /* ==== Z-index ==== */
+  /* Z-index */
   --z-base: 1;
   --z-info: 100;
   --z-overlay: 200;
   --z-sidebar: 400;
   --z-modal: 500;
 
-  /* ==== Other ==== */
+  /* Other */
   --transition-fast: 0.2s ease;
   --transition: 0.3s ease;
   --transition-slow: 0.5s ease;
@@ -204,7 +202,7 @@ Variables
 
 /* =========================
 Base
-========================= */
+=====================*/
 body {
   background: var(--color-bg-default);
   font-size: var(--fs-base);
@@ -213,7 +211,7 @@ body {
   color: var(--color-text-primary);
 }
 
-/* ==== Heading ==== */
+/* Heading */
 h1,
 h2,
 h3,
@@ -225,14 +223,14 @@ h6 {
   line-height: var(--lh-tight);
 }
 
-/* ==== Link ==== */
+/* Link */
 button {
   cursor: pointer;
 }
 
 /* =========================
 Layout
-========================= */
+=====================*/
 /* --------------------------
 page/Mobile Header
 -------------------------- */
@@ -547,6 +545,9 @@ index/WORKS
   font-weight: 600;
   font-family: var(--ff-en);
   letter-spacing: 0.12em;
+}
+
+.card01 {
   color: var(--project-01);
 }
 .card02 {
@@ -631,33 +632,49 @@ index/WORKS
 /* index/workOpenPanel */
 .workOpenPanel {
   display: grid;
-  position: relative;
+  position: absolute;
+
   gap: var(--space-3xl);
   height: 100%;
 
   box-sizing: border-box;
   padding: var(--space-2xl);
+
+  opacity: 0;
+  pointer-events: none;
+  inset: 0;
+
   grid-template-columns:
     minmax(0, 1.4fr)
     minmax(280px, 1fr);
+  visibility: hidden;
+}
+
+.workOpenPanel.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 /* index/workOpenVisual */
 .workOpenVisual {
   transform: translateX(24px);
-  height: 100%;
-  min-width: 0;
 
+  height: 100%;
+
+  min-width: 0;
   min-height: 0;
 
   opacity: 0;
+
   transition:
     opacity var(--transition),
     transform var(--transition);
 }
-.workOpenArea.is-open .workOpenVisual {
+.workOpenPanel.is-open .workOpenVisual {
   transform: translateX(0);
   opacity: 1;
+
   transition-delay: 0.1s;
 }
 .workOpenVisual img {
@@ -677,7 +694,7 @@ index/WORKS
 
   overflow-y: auto;
 }
-.workOpenArea.is-open .workDetail {
+.workOpenPanel.is-open .workDetail {
   transform: translateX(0);
   opacity: 1;
   transition-delay: 0.25s;
@@ -694,8 +711,6 @@ index/WORKS
   font-size: var(--fs-caption);
   font-family: var(--ff-en);
   letter-spacing: 0.12em;
-
-  color: var(--project-01);
 }
 .workDetailHeader h3 {
   margin-bottom: var(--space-xs);
@@ -785,7 +800,7 @@ index/WORKS
     opacity var(--transition),
     transform var(--transition);
 }
-.workOpenArea.is-open .workBackButton {
+.workOpenPanel.is-open .workBackButton {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
@@ -1147,7 +1162,7 @@ Thanks.html
 
 /* =========================
 Components
-========================= */
+=====================*/
 /* --------------------------
 Arrow
 -------------------------- */
@@ -1260,7 +1275,7 @@ FormItem
 
 /* =========================
 Utility
-========================= */
+=====================*/
 .hidden {
   display: none;
 }
@@ -1302,7 +1317,7 @@ Utility
 
 /* =========================
 Media Queries
-========================= */
+=====================*/
 /* tablet */
 @media (max-width: 1024px) {
   .worksSection .sectionHeader {
