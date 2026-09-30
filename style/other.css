@@ -1,0 +1,157 @@
+/* =========================
+   Legal / Privacy
+========================= */
+
+/* =========================
+   PC
+========================= */
+
+/* =========================
+   404
+========================= */
+
+/* =========================
+   PC
+========================= */
+
+/* =========================
+   Coming Soon
+========================= */
+
+.comingSoon {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+}
+
+.comingSoon .pageInner {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Code */
+.comingSoonCode {
+  margin: 0 0 24px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  line-height: 1;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+
+/* Title */
+.comingSoonTitle {
+  margin: 0;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 400;
+  font-family: var(--font-serif);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Text */
+.comingSoonText {
+  margin: 32px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--font-sans);
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+/* Back Link */
+.comingSoon .backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 48px;
+  font-size: 13px;
+  font-weight: 500;
+
+  font-family: var(--font-sans);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.comingSoon .backLink span {
+  position: relative;
+
+  width: 28px;
+  height: 1px;
+
+  background: currentColor;
+}
+
+.comingSoon .backLink span::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  width: 6px;
+  height: 6px;
+  content: "";
+
+  border-left: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+
+.comingSoon .backLink:hover {
+  opacity: 0.55;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 767px) {
+  .comingSoon {
+    min-height: 100%;
+  }
+
+  .comingSoon .pageInner {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .comingSoonCode {
+    margin-bottom: 20px;
+    font-size: 11px;
+  }
+
+  .comingSoonTitle {
+    font-size: clamp(38px, 11vw, 56px);
+    line-height: 1.1;
+  }
+
+  .comingSoonText {
+    margin-top: 24px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .comingSoon .backLink {
+    margin-top: 40px;
+  }
+}
+
+/* =========================
+   PC
+========================= */
+
+/* =========================
+   Thanks
+========================= */
+
+/* =========================
+   PC
+========================= */

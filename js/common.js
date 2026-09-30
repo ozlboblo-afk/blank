@@ -1,4 +1,4 @@
-const drawerButton = document.querySelector(".drawerButton");
+const drawerButton = document.querySelector(".drawerBtn");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.querySelector(".drawerOverlay");
 

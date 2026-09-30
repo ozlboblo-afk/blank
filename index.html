@@ -24,6 +24,15 @@
     <!-- ==== Canonical ==== -->
     <link rel="canonical" href="https://blank-eight-mu.vercel.app/" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- ==== OGP ==== -->
     <meta
       property="og:title"
@@ -60,7 +69,8 @@
     <link rel="alternate icon" href="/assets/icon/favicon.png" />
 
     <!-- ==== CSS ==== -->
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/index.css" />
 
     <!-- ==== Structured Data ==== -->
     <script type="application/ld+json">
@@ -79,7 +89,7 @@
     <!-- モバイルヘッダー -->
     <header class="mobileHeader">
       <button
-        class="drawerButton"
+        class="drawerBtn"
         aria-label="メニュー"
         aria-expanded="false"
         aria-controls="sidebar"
@@ -123,7 +133,7 @@
             <li><a href="/">TOP</a></li>
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#skill">SKILL</a></li>
-            <li><a href="/contact.html">CONTACT</a></li>
+            <li><a href="/comingsoon.html">CONTACT</a></li>
           </ul>
         </nav>
       </header>
@@ -131,10 +141,10 @@
       <footer class="sidebarFooter">
         <nav class="footerNav">
           <ul>
-            <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
+            <li><a href="/comingsoon.html">プライバシーポリシー</a></li>
 
             <li>
-              <a href="/legal.html">特定商取引法に基づく表記</a>
+              <a href="/comingsoon.html">特定商取引法に基づく表記</a>
             </li>
           </ul>
         </nav>
@@ -156,108 +166,93 @@
           <p class="sectionCopy">Minimal websites, crafted with intention.</p>
         </header>
 
-        <div class="worksContent">
-          <section class="worksGrid">
-            <div class="worksShelf" aria-hidden="true"></div>
+        <div class="worksGrid">
+          <!-- 01 -->
+          <article class="workCard" data-work="sen">
+            <span class="workNumber">01</span>
 
-            <!-- 01 -->
-            <article class="workCard" data-work="sen">
-              <span class="workVisualNumber card01">01</span>
+            <button class="workCardButton" type="button" aria-expanded="false">
+              <figure class="workVisual visual">
+                <img src="assets/img/sen/sen01.webp" fetchpriority="high" />
+              </figure>
 
-              <button
-                class="workCardButton"
-                type="button"
-                aria-expanded="false"
-              >
-                <figure class="workVisual visual">
-                  <img
-                    src="assets/img/sen_site.webp"
-                    alt="SEN HAIR SALON"
-                    fetchpriority="high"
-                  />
-                </figure>
-
-                <div class="cardBody">
-                  <div class="cardInfo">
-                    <h3>SEN HAIR SALON</h3>
-                    <p>Hair Salon Website</p>
-                  </div>
-
-                  <span class="viewLink">
-                    <span>VIEW PROJECT</span>
-                    <span class="arrow"></span>
-                  </span>
-                </div>
-              </button>
-            </article>
-
-            <!-- 02 -->
-            <article class="workCard" data-work="dogSalon">
-              <span class="workVisualNumber card02">02</span>
-
-              <button
-                class="workCardButton"
-                type="button"
-                aria-expanded="false"
-              >
-                <figure class="workVisual visual">
-                  <img
-                    src="assets/img/dogSalonSite.webp"
-                    alt="DOG SALON"
-                    fetchpriority="high"
-                  />
-                </figure>
-
-                <div class="cardBody">
-                  <div class="cardInfo">
-                    <h3>DOG SALON</h3>
-                    <p>Dog Salon Website</p>
-                  </div>
-
-                  <span class="viewLink">
-                    <span>VIEW PROJECT</span>
-                    <span class="arrow"></span>
-                  </span>
-                </div>
-              </button>
-            </article>
-
-            <!-- 03 -->
-            <article class="workCard workCardComingSoon">
-              <span class="workVisualNumber card03">03</span>
-
-              <div class="comingSoon">
-                <div class="comingSoonVisual">
-                  <p>COMING SOON</p>
+              <div class="cardBody">
+                <div class="cardInfo">
+                  <h3>SEN HAIR SALON</h3>
+                  <p>Hair Salon Website</p>
                 </div>
 
-                <div class="cardBody">
-                  <div class="cardInfo">
-                    <h3>COMING SOON</h3>
-                    <p>—</p>
-                  </div>
+                <span class="textLink">
+                  <span>VIEW PROJECT</span>
+                  <span class="arrow"></span>
+                </span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 02 -->
+          <article class="workCard" data-work="dogSalon">
+            <span class="workNumber">02</span>
+
+            <button class="workCardButton" type="button" aria-expanded="false">
+              <figure class="workVisual visual">
+                <img
+                  src="assets/img/dogsalon/dogsalon03.webp"
+                  fetchpriority="high"
+                />
+              </figure>
+
+              <div class="cardBody">
+                <div class="cardInfo">
+                  <h3>DOG SALON</h3>
+                  <p>Dog Salon Website</p>
+                </div>
+
+                <span class="textLink">VIEW PROJECT</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 03 -->
+          <article class="workCard" data-work="form">
+            <span class="workNumber">03</span>
+
+            <button class="workCardButton" type="button" aria-expanded="false">
+              <figure class="workVisual visual">
+                <img src="assets/img/form/form03.webp" fetchpriority="high" />
+              </figure>
+
+              <div class="cardBody">
+                <div class="cardInfo">
+                  <h3>FORM / FURNITURE</h3>
+                  <p>Furniture Website</p>
+                </div>
+
+                <span class="textLink">
+                  <span>VIEW PROJECT</span>
+                  <span class="arrow"></span>
+                </span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 04 -->
+          <article class="workCard workCardComingSoon">
+            <span class="workNumber">04</span>
+
+            <div class="comingSoon">
+              <div class="comingSoonVisual workVisual">
+                <p>COMING SOON</p>
+              </div>
+
+              <div class="cardBody">
+                <div class="cardInfo">
+                  <h3>COMING SOON</h3>
+                  <p>—</p>
                 </div>
               </div>
-            </article>
-
-            <!-- 04 -->
-            <article class="workCard workCardComingSoon">
-              <span class="workVisualNumber card04">04</span>
-
-              <div class="comingSoon">
-                <div class="comingSoonVisual">
-                  <p>COMING SOON</p>
-                </div>
-
-                <div class="cardBody">
-                  <div class="cardInfo">
-                    <h3>COMING SOON</h3>
-                    <p>—</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </section>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -276,22 +271,19 @@
 
           <ul class="infoBody">
             <li>
-              <img src="assets/icon/chevrons-left-right.svg" alt="HTMLマーク" />
+              <img src="assets/icon/chevrons-left-right.svg" alt="" />
               HTML
             </li>
             <li>
-              <img src="assets/icon/hash.svg" alt="CSSマーク" />
+              <img src="assets/icon/hash.svg" alt="" />
               CSS
             </li>
             <li>
-              <img
-                src="assets/icon/fluent--code-js-16-regular.svg"
-                alt="JavaScriptマーク"
-              />
+              <img src="assets/icon/fluent--code-js-16-regular.svg" alt="" />
               JavaScript
             </li>
             <li>
-              <img src="assets/icon/diamond.svg" alt="Figmaマーク" />
+              <img src="assets/icon/diamond.svg" alt="" />
               Figma
             </li>
           </ul>
@@ -304,185 +296,135 @@
           </summary>
 
           <div class="contactGrid infoBody">
-            <a href="/contact.html" class="contactItem">
-              <img src="assets/icon/send.svg" alt="sendアイコン" />
+            <a href="/comingsoon.html" class="contactItem">
+              <img src="assets/icon/send.svg" alt="" />
               <span>Contact Form</span>
             </a>
 
-            <a href="mailto:hello@blank-design.com" class="contactItem">
-              <img src="assets/icon/mail.svg" alt="mailアイコン" />
-              <span>
-                blank.design.jp
-                <br class="mailBreak" />
-                @gmail.com
-              </span>
+            <a href="mailto:blank.design.jp@gmail.com" class="contactItem">
+              <img src="assets/icon/mail.svg" alt="" />
+              <span>blank.design.jp@gmail.com</span>
             </a>
 
             <a
-              href="https://instagram.com/blank.design"
+              href="/comingsoon.html"
               target="_blank"
               rel="noopener noreferrer"
               class="contactItem"
             >
-              <img
-                src="assets/icon/lets-icons--insta.svg"
-                alt="Instagramアイコン"
-              />
+              <img src="assets/icon/lets-icons--insta.svg" alt="" />
               <span>@blank.design</span>
             </a>
           </div>
         </details>
       </section>
-
-      <!-- WORK OPEN -->
-      <section class="workPanelArea" aria-hidden="true">
-        <!-- 背景オーバーレイ -->
-        <div class="workPanelOverlay"></div>
-
-        <!-- SEN -->
-        <article class="workPanel" data-work-panel="sen">
-          <div class="workPanelContent">
-            <figure class="workPanelVisual visual">
-              <img src="assets/img/sen_site.webp" alt="SEN HAIR SALON" />
-            </figure>
-
-            <div class="workPanelDetail" id="workPanelDetail-sen">
-              <div class="workDetailHeader">
-                <span class="workDetailNumber card01">01</span>
-
-                <h3>SEN HAIR SALON</h3>
-
-                <p>Hair Salon Website</p>
-              </div>
-
-              <p class="workDetailDescription">
-                大人のためのヘアサロンを想定した架空サイト。
-                落ち着いたトーンと余白を活かし、
-                上質で洗練された世界観を表現しました。
-              </p>
-
-              <dl class="workDetailMeta">
-                <div>
-                  <dt>ROLE</dt>
-                  <dd>Design / Coding</dd>
-                </div>
-
-                <div>
-                  <dt>TOOLS</dt>
-                  <dd>Figma / VS Code</dd>
-                </div>
-
-                <div>
-                  <dt>YEAR</dt>
-                  <dd>2026</dd>
-                </div>
-              </dl>
-
-              <div class="workDetailConcept">
-                <span>CONCEPT</span>
-
-                <p>
-                  brownを基調とした落ち着いた配色と、
-                  余白を活かしたミニマルな構成で、
-                  サロンの上質さや静けさを感じられる デザインに仕上げました。
-                </p>
-              </div>
-
-              <a
-                class="viewLink workDetailLink"
-                href="https://sen-hair-salon.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>VIEW PROJECT</span>
-                <span class="arrow"></span>
-              </a>
-            </div>
-          </div>
-
-          <button class="backLink workBackButton" type="button">
-            <span></span>
-            Back
-          </button>
-        </article>
-
-        <!-- DOG SALON -->
-        <article class="workPanel" data-work-panel="dogSalon">
-          <div class="workPanelContent">
-            <figure class="workPanelVisual visual">
-              <img src="assets/img/dogSalonSite.webp" alt="DOG SALON" />
-            </figure>
-
-            <!-- 詳細 -->
-            <div
-              class="workPanelDetail"
-              id="workPanelDetail-dog-salon"
-              aria-hidden="true"
-            >
-              <div class="workDetailHeader">
-                <span class="workDetailNumber card02">02</span>
-                <h3>DOG SALON</h3>
-                <p>Dog Salon Landing Page</p>
-              </div>
-
-              <p class="workDetailDescription">
-                わんちゃんと飼い主さまが安心して通える
-                ドッグサロンを想定した架空のランディングページ。
-                やさしく親しみやすい世界観と、見やすさを両立しました。
-              </p>
-
-              <dl class="workDetailMeta">
-                <div>
-                  <dt>ROLE</dt>
-                  <dd>Design / Coding</dd>
-                </div>
-
-                <div>
-                  <dt>TOOLS</dt>
-                  <dd>Figma / VS Code</dd>
-                </div>
-
-                <div>
-                  <dt>YEAR</dt>
-                  <dd>2026</dd>
-                </div>
-              </dl>
-
-              <div class="workDetailConcept">
-                <span>CONCEPT</span>
-                <p>
-                  やわらかなグレージュを基調に、
-                  丸みのあるビジュアルや余白を取り入れることで、
-                  わんちゃんのかわいらしさと、
-                  飼い主さまが安心できるやさしい雰囲気を表現しました。
-                  情報量の多いランディングページでも、
-                  セクションごとにメリハリをつけながら、
-                  楽しく読み進められる構成を意識しています。
-                </p>
-              </div>
-
-              <a
-                class="viewLink workDetailLink"
-                href="https://dog-salon-lp.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>VIEW PROJECT</span>
-                <span class="arrow"></span>
-              </a>
-            </div>
-          </div>
-
-          <button class="backLink workBackButton" type="button">
-            <span></span>
-            Back
-          </button>
-        </article>
-      </section>
     </main>
 
-    <script src="/js/accordion.js"></script>
-    <script src="/js/sidebar.js"></script>
-    <script src="/js/workCard.js"></script>
+    <!-- WORK PANEL -->
+    <section class="workPanelArea" aria-hidden="true">
+      <!-- Overlay -->
+      <div class="workPanelOverlay"></div>
+
+      <!-- Panel -->
+      <div
+        class="workPanel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="workPanelTitle"
+      >
+        <div class="workPanelInner">
+          <!-- Header -->
+          <header class="workPanelHeader">
+            <button
+              class="workPanelClose"
+              type="button"
+              aria-label="作品詳細を閉じる"
+            >
+              <span class="backLine" aria-hidden="true"></span>
+              <span>BACK</span>
+            </button>
+
+            <span class="workPanelNumber"></span>
+          </header>
+
+          <!-- Slider -->
+          <div class="workSlider">
+            <!-- Main Slide -->
+            <div class="workSliderViewport">
+              <div class="workSliderTrack"></div>
+            </div>
+
+            <!-- Thumbnail Navigation -->
+            <div
+              class="workSliderThumbs"
+              role="tablist"
+              aria-label="作品画像一覧"
+            ></div>
+
+            <!-- Controls -->
+            <div class="workSliderControls">
+              <button
+                class="workSliderButton workSliderPrev"
+                type="button"
+                aria-label="前の画像"
+              >
+                <span aria-hidden="true">←</span>
+              </button>
+
+              <div class="workSliderCounter" aria-live="polite">
+                <span class="workSliderCurrent">01</span>
+                <span aria-hidden="true">/</span>
+                <span class="workSliderTotal"></span>
+              </div>
+
+              <button
+                class="workSliderButton workSliderNext"
+                type="button"
+                aria-label="次の画像"
+              >
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="workPanelDetail">
+            <header class="workDetailHeader">
+              <h2 id="workPanelTitle"></h2>
+              <p class="workDetailCategory"></p>
+            </header>
+
+            <dl class="workDetailMeta">
+              <div>
+                <dt>ROLE</dt>
+                <dd data-meta="role"></dd>
+              </div>
+
+              <div>
+                <dt>TOOLS</dt>
+                <dd data-meta="tools"></dd>
+              </div>
+
+              <div>
+                <dt>YEAR</dt>
+                <dd data-meta="year"></dd>
+              </div>
+            </dl>
+
+            <a
+              class="textLink workDetailLink"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>VIEW PROJECT</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>
