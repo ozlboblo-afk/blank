@@ -61,14 +61,15 @@
     <link rel="alternate icon" href="/assets/icon/favicon.png" />
 
     <!-- ==== CSS ==== -->
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/other.css" />
   </head>
 
   <body>
     <!-- モバイルヘッダー -->
     <header class="mobileHeader">
       <button
-        class="drawerButton"
+        class="drawerBtn"
         aria-label="メニュー"
         aria-expanded="false"
         aria-controls="sidebar"
@@ -78,7 +79,7 @@
         <span></span>
       </button>
 
-      <a href="/" class="mobileLogo">BLANK</a>
+      <a href="/" class="mobileLogo">ー BLANK</a>
     </header>
 
     <!-- 背景 -->
@@ -110,8 +111,8 @@
         <nav class="globalNav">
           <ul>
             <li><a href="/">TOP</a></li>
-            <li><a href="/coming-soon.html">ABOUT</a></li>
-            <li><a href="/coming-soon.html">SKILL</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skill">SKILL</a></li>
             <li><a href="/contact.html">CONTACT</a></li>
           </ul>
         </nav>
@@ -120,7 +121,7 @@
       <footer class="sidebarFooter">
         <nav class="footerNav">
           <ul>
-            <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
+            <li><a href="/privacypolicy.html">プライバシーポリシー</a></li>
 
             <li>
               <a href="/legal.html">特定商取引法に基づく表記</a>
@@ -135,66 +136,62 @@
     </aside>
 
     <main class="main privacyPolicy">
-      <div class="container-md">
-        <div class="container">
-          <div class="sectionHeader">
-            <p class="sectionEyebrow">Privacy Policy</p>
-            <h1>プライバシーポリシー</h1>
-          </div>
-
-          <div class="privacyBody">
-            <section class="privacySection">
-              <h2>個人情報の利用目的</h2>
-              <p>
-                BLANKでは、お問い合わせ時にお名前・メールアドレス等の個人情報をご入力いただく場合があります。
-                取得した情報は、お問い合わせへの回答および必要なご連絡のために利用いたします。
-              </p>
-            </section>
-
-            <section class="privacySection">
-              <h2>アクセス解析ツールについて</h2>
-              <p>
-                当サイトでは、サイト改善のためアクセス解析ツールを利用する場合があります。
-                取得される情報には個人を特定するものは含まれません。
-              </p>
-            </section>
-
-            <section class="privacySection">
-              <h2>第三者への提供について</h2>
-              <p>
-                取得した個人情報を、法令に基づく場合を除き第三者へ提供することはありません。
-              </p>
-            </section>
-
-            <section class="privacySection">
-              <h2>免責事項</h2>
-              <p>
-                当サイトに掲載する情報については、可能な限り正確な情報を掲載するよう努めておりますが、
-                内容の正確性・安全性を保証するものではありません。
-              </p>
-            </section>
-
-            <section class="privacySection">
-              <h2>お問い合わせ</h2>
-              <p>
-                個人情報に関するお問い合わせは、サイト内のお問い合わせフォームよりご連絡ください。
-              </p>
-            </section>
-
-            <section class="privacySection">
-              <h2>制定日</h2>
-              <p>2026年5月</p>
-            </section>
-          </div>
-        </div>
-
-        <a href="/" class="backLink">
-          <span></span>
-          Back
-        </a>
+      <div class="sectionHeader">
+        <p class="sectionEyebrow">Privacy Policy</p>
+        <h1>プライバシーポリシー</h1>
       </div>
+
+      <div class="privacyBody">
+        <section class="privacySection">
+          <h2>個人情報の利用目的</h2>
+          <p>
+            BLANKでは、お問い合わせ時にお名前・メールアドレス等の個人情報をご入力いただく場合があります。
+            取得した情報は、お問い合わせへの回答および必要なご連絡のために利用いたします。
+          </p>
+        </section>
+
+        <section class="privacySection">
+          <h2>アクセス解析ツールについて</h2>
+          <p>
+            当サイトでは、サイト改善のためアクセス解析ツールを利用する場合があります。
+            取得される情報には個人を特定するものは含まれません。
+          </p>
+        </section>
+
+        <section class="privacySection">
+          <h2>第三者への提供について</h2>
+          <p>
+            取得した個人情報を、法令に基づく場合を除き第三者へ提供することはありません。
+          </p>
+        </section>
+
+        <section class="privacySection">
+          <h2>免責事項</h2>
+          <p>
+            当サイトに掲載する情報については、可能な限り正確な情報を掲載するよう努めておりますが、
+            内容の正確性・安全性を保証するものではありません。
+          </p>
+        </section>
+
+        <section class="privacySection">
+          <h2>お問い合わせ</h2>
+          <p>
+            個人情報に関するお問い合わせは、サイト内のお問い合わせフォームよりご連絡ください。
+          </p>
+        </section>
+
+        <section class="privacySection">
+          <h2>制定日</h2>
+          <p>2026年5月</p>
+        </section>
+      </div>
+
+      <a href="/" class="backLink">
+        <span></span>
+        Back
+      </a>
     </main>
 
-    <script src="/js/sidebar.js"></script>
+    <script src="/js/common.js"></script>
   </body>
 </html>

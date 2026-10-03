@@ -1,157 +1,158 @@
 /* =========================
-   Legal / Privacy
+   Other Pages
 ========================= */
+.legalPage,
+.privacyPolicy {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+  padding-inline: var(--content-padding);
+}
+.legalPage .sectionHeader,
+.privacyPolicy .sectionHeader {
+  margin-bottom: var(--space-3xl);
+}
+.legalBody,
+.privacyBody {
+  width: min(100%, var(--content-xl));
+}
+.legalSection,
+.privacySection {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border-default);
+}
+.legalSection:last-child,
+.privacySection:last-child {
+  margin-bottom: 0;
+}
+.legalSection h2,
+.privacySection h2 {
+  margin: 0 0 var(--space-md);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  line-height: var(--lh-base);
+}
+.legalSection p,
+.privacySection p {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+}
+.legalPage .backLink,
+.privacyPolicy .backLink {
+  margin-top: var(--space-3xl);
+}
 
-/* =========================
-   PC
-========================= */
+@media (max-width: 767px) {
+  .legalPage,
+  .privacyPolicy {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+  .legalPage .sectionHeader,
+  .privacyPolicy .sectionHeader {
+    margin-bottom: var(--space-2xl);
+  }
+  .legalSection,
+  .privacySection {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+  .legalSection h2,
+  .privacySection h2 {
+    margin-bottom: var(--space-sm);
+    font-size: var(--fs-sm);
+  }
+  .legalSection p,
+  .privacySection p {
+    font-size: var(--fs-xs);
+    line-height: var(--lh-relaxed);
+  }
+  .legalPage .backLink,
+  .privacyPolicy .backLink {
+    margin-top: var(--space-2xl);
+  }
+}
 
 /* =========================
    404
 ========================= */
-
-/* =========================
-   PC
-========================= */
-
-/* =========================
-   Coming Soon
-========================= */
-
-.comingSoon {
+.error404,
+.comingSoon,
+.thanks {
   display: flex;
   align-items: center;
   min-height: 100%;
 }
-
-.comingSoon .pageInner {
-  width: 100%;
-  padding-top: 80px;
-  padding-bottom: 80px;
+.error404 .pageInner,
+.comingSoon .pageInner,
+.thanks .pageInner {
+  width: min(100%, var(--content-2xl));
+  margin-inline: auto;
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+  padding-inline: var(--content-padding);
 }
-
-/* Code */
-.comingSoonCode {
-  margin: 0 0 24px;
-  font-size: 12px;
+.otherPageLabel {
+  margin: 0 0 var(--space-lg);
+  font-size: var(--fs-xs);
   font-weight: 500;
-  font-family: var(--font-sans);
-  line-height: 1;
+  line-height: var(--lh-none);
   letter-spacing: 0.16em;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
 }
-
-/* Title */
-.comingSoonTitle {
+.otherPageTitle {
   margin: 0;
-  font-size: clamp(42px, 5vw, 72px);
+  font-size: var(--fs-xxl);
   font-weight: 400;
-  font-family: var(--font-serif);
+  font-family: var(--ff-serif);
   line-height: 1.08;
   letter-spacing: -0.02em;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
 }
-
-/* Text */
-.comingSoonText {
-  margin: 32px 0 0;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: var(--font-sans);
-  line-height: 1.9;
-  color: var(--text-secondary);
+.thanks .otherPageTitle {
+  line-height: 1.15;
 }
-
-/* Back Link */
-.comingSoon .backLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  margin-top: 48px;
-  font-size: 13px;
-  font-weight: 500;
-
-  font-family: var(--font-sans);
-  line-height: 1;
-  letter-spacing: 0.04em;
-  color: var(--text-primary);
-
-  transition: opacity 0.3s ease;
-  text-decoration: none;
+.otherPageText {
+  margin: var(--space-lg) 0 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
 }
-
-.comingSoon .backLink span {
-  position: relative;
-
-  width: 28px;
-  height: 1px;
-
-  background: currentColor;
+.error404 .backLink,
+.comingSoon .backLink,
+.thanks .backLink {
+  margin-top: var(--space-2xl);
 }
-
-.comingSoon .backLink span::before {
-  position: absolute;
-  top: 50%;
-  left: 0;
-
-  transform: translateY(-50%) rotate(45deg);
-
-  width: 6px;
-  height: 6px;
-  content: "";
-
-  border-left: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
-}
-
-.comingSoon .backLink:hover {
-  opacity: 0.55;
-}
-
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 767px) {
-  .comingSoon {
-    min-height: 100%;
+  .error404 .pageInner,
+  .comingSoon .pageInner,
+  .thanks .pageInner {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
   }
-
-  .comingSoon .pageInner {
-    padding-top: 64px;
-    padding-bottom: 64px;
+  .otherPageLabel {
+    margin-bottom: var(--space-md);
+    font-size: var(--fs-micro);
   }
-
-  .comingSoonCode {
-    margin-bottom: 20px;
-    font-size: 11px;
-  }
-
-  .comingSoonTitle {
-    font-size: clamp(38px, 11vw, 56px);
+  .otherPageTitle {
+    font-size: var(--fs-xl);
     line-height: 1.1;
   }
-
-  .comingSoonText {
-    margin-top: 24px;
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-  .comingSoon .backLink {
-    margin-top: 40px;
+  .otherPageText {
+    margin-top: var(--space-md);
+    font-size: var(--fs-xs);
+    line-height: var(--lh-relaxed);
   }
 }
 
 /* =========================
-   PC
+   Coming Soon
 ========================= */
-
-/* =========================
-   Thanks
-========================= */
-
-/* =========================
-   PC
-========================= */
+/* Code */
+.comingSoon .otherPageLabel,
+.comingSoon .otherPageText {
+  font-family: var(--ff-en);
+}

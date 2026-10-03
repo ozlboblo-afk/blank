@@ -61,7 +61,8 @@
     <link rel="alternate icon" href="/assets/icon/favicon.png" />
 
     <!-- ==== CSS ==== -->
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/contact.css" />
   </head>
 
   <body>
@@ -120,7 +121,7 @@
       <footer class="sidebarFooter">
         <nav class="footerNav">
           <ul>
-            <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
+            <li><a href="/privacypolicy.html">プライバシーポリシー</a></li>
 
             <li>
               <a href="/legal.html">特定商取引法に基づく表記</a>
@@ -135,60 +136,90 @@
     </aside>
 
     <main class="main contactPage">
-      <div class="container-md">
+      <div class="pageInner">
         <div class="sectionHeader">
           <p class="sectionEyebrow">Contact</p>
           <h1>お問い合わせ</h1>
-
-          <p class="contactLead">
-            Web制作のご相談・ご依頼など、 お気軽にお問い合わせください。
-          </p>
         </div>
 
-        <form class="contactForm">
-          <div class="formItem">
-            <label for="name">
-              お名前
-              <span>必須</span>
-            </label>
-            <input id="name" type="text" />
-          </div>
+        <div class="contactBody">
+          <p class="contactLead">
+            Webサイト制作・デザインに関するご相談やお問い合わせはこちらからご連絡ください。
+          </p>
 
-          <div class="formItem">
-            <label for="mail">
-              メールアドレス
-              <span>必須</span>
-            </label>
-            <input id="mail" type="email" />
-          </div>
+          <form
+            class="contactForm"
+            id="contact-form"
+            action="https://formspree.io/f/xjgzblqr"
+            method="post"
+          >
+            <div class="formGroup">
+              <label class="formLabel" for="name">
+                お名前
+                <span class="formRequired">必須</span>
+              </label>
 
-          <div class="formItem">
-            <label for="subject">件名</label>
-            <input id="subject" type="text" />
-          </div>
+              <input
+                class="formInput"
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+              />
+            </div>
 
-          <div class="formItem">
-            <label for="message">
-              お問い合わせ内容
-              <span>必須</span>
-            </label>
+            <div class="formGroup">
+              <label class="formLabel" for="email">
+                メールアドレス
+                <span class="formRequired">必須</span>
+              </label>
 
-            <textarea id="message" rows="8"></textarea>
-          </div>
+              <input
+                class="formInput"
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
 
-          <button class="contactSubmit" type="submit">
-            <span class="contactLabel">Send Message</span>
-            <span class="contactArrow"></span>
-          </button>
-        </form>
+            <div class="formGroup">
+              <label class="formLabel" for="subject">件名</label>
 
-        <a href="/" class="backLink">
-          <span></span>
-          Back
-        </a>
+              <input
+                class="formInput"
+                type="text"
+                id="subject"
+                name="subject"
+              />
+            </div>
+
+            <div class="formGroup">
+              <label class="formLabel" for="message">
+                お問い合わせ内容
+                <span class="formRequired">必須</span>
+              </label>
+
+              <textarea
+                class="formTextarea"
+                id="message"
+                name="message"
+                rows="8"
+                required
+              ></textarea>
+            </div>
+
+            <div class="formAction">
+              <button class="formSubmit" type="submit">送信する</button>
+            </div>
+          </form>
+        </div>
       </div>
     </main>
 
-    <script src="/js/sidebar.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/contact.js"></script>
   </body>
 </html>

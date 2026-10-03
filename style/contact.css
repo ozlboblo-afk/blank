@@ -1,15 +1,164 @@
 /* =========================
-   Contact Header
+   Contact
 ========================= */
+.contactPage {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+  padding-inline: var(--content-padding);
+}
+
+.contactPage .pageInner {
+  width: min(100%, var(--content-lg));
+  margin-inline: auto;
+}
+
+.contactPage .sectionHeader {
+  margin-bottom: var(--space-3xl);
+}
+
+.contactBody {
+  width: min(100%, var(--content-md));
+}
+
+.contactLead {
+  margin-bottom: var(--space-3xl);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Form */
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.formLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: var(--lh-base);
+}
+
+.formRequired {
+  font-size: var(--fs-micro);
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-default);
+
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+  transition: border-color var(--transition-base);
+
+  outline: none;
+}
+
+.formInput {
+  min-height: 48px;
+}
+
+.formTextarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: var(--color-text-primary);
+}
+
+/* Submit */
+
+.formAction {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: var(--space-md);
+}
+
+.formSubmit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+
+  padding: 0 0 var(--space-xs);
+
+  border: 0;
+  background: transparent;
+
+  font-size: var(--fs-sm);
+  font-family: inherit;
+  letter-spacing: 0.12em;
+  color: var(--color-text-primary);
+
+  cursor: pointer;
+  transition: var(--transition-base);
+  border-bottom: 1px solid var(--color-text-primary);
+}
+
+.formSubmit::after {
+  transition: transform var(--transition-base);
+  content: "→";
+}
+
+.formSubmit:hover {
+  opacity: 0.6;
+}
+
+.formSubmit:hover::after {
+  transform: translateX(6px);
+}
 
 /* =========================
-   Contact Form
+   Mobile
 ========================= */
 
-/* =========================
-   Submit
-========================= */
+@media (max-width: 767px) {
+  .contactPage {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
 
-/* =========================
-   PC
-========================= */
+  .contactPage .sectionHeader {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .contactLead {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .contactForm {
+    gap: var(--space-lg);
+  }
+
+  .formTextarea {
+    min-height: 180px;
+  }
+
+  .formAction {
+    margin-top: var(--space-sm);
+  }
+
+  .formSubmit {
+    width: 100%;
+  }
+}
